@@ -1,26 +1,226 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === LES RÉCOLTANTS DESIGN TOKENS === */
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* UI */
+  --border-color: #e8e4dc;
+  --shadow-subtle: 0 2px 8px rgba(45, 40, 32, 0.08);
+  --shadow-medium: 0 4px 16px rgba(45, 40, 32, 0.12);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* === BASE STYLES === */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Performance optimizations */
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+img {
+  content-visibility: auto;
+}
+
+/* Force header to always stay visible */
+header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 9999 !important;
+}
+
+html {
+  scroll-behavior: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f8f6f3;
+  color: #2d2820;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+/* === TYPOGRAPHIE === */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  color: #2d2820;
+}
+
+/* === ANIMATIONS SOPHISTIQUÉES === */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.2s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.15s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.2s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.2s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.2s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Stagger delays pour animations en séquence - Ultra rapide */
+.stagger-1 { animation-delay: 0.02s; }
+.stagger-2 { animation-delay: 0.04s; }
+.stagger-3 { animation-delay: 0.06s; }
+.stagger-4 { animation-delay: 0.08s; }
+.stagger-5 { animation-delay: 0.1s; }
+
+/* États initiaux pour les animations */
+.animate-fade-in-up,
+.animate-slide-in-left,
+.animate-slide-in-right,
+.animate-fade-in,
+.animate-scale-in {
+  opacity: 0;
+}
+
+/* === TEXTURES (à appliquer via classes) === */
+
+/* Ceruse normal - Sections claires secondaires */
+.texture-ceruse-light {
+  background: linear-gradient(135deg, #f8f6f3 0%, #f5f3ef 50%, #f8f6f3 100%);
+  background-color: #f8f6f3; /* Fallback */
+  will-change: auto;
+  backface-visibility: hidden;
+}
+
+/* Ceruse CMJN - Sections claires importantes (plus saturé) - Version optimisée */
+.texture-ceruse-cmyk {
+  background: linear-gradient(135deg, #f5f1ea 0%, #ebe7df 25%, #f8f4ed 50%, #ebe7df 75%, #f5f1ea 100%);
+  background-color: #f0ece5; /* Fallback */
+  will-change: auto;
+  backface-visibility: hidden;
+}
+
+/* Terracotta normal - Sections chaleureuses secondaires */
+.texture-terracotta {
+  background: linear-gradient(135deg, #fdf4f0 0%, #fceee8 50%, #fdf4f0 100%);
+  background-color: #fdf4f0; /* Fallback */
+  will-change: auto;
+  backface-visibility: hidden;
+}
+
+/* Terracotta CMJN - Sections importantes, hero, CTA (orange saturé) - Version optimisée */
+.texture-terracotta-cmyk {
+  background: linear-gradient(135deg, #fde8d8 0%, #fcd5bb 25%, #fde0ca 50%, #fcd5bb 75%, #fde8d8 100%);
+  background-color: #fdddc4; /* Fallback */
+  will-change: auto;
+  backface-visibility: hidden;
+}
+
+/* Terracotta CMJN - Version IMAGE pour la charte des récoltants */
+.texture-terracotta-cmyk-image {
+  background-image: url('/images/hero/FondTerreCuite-CMJN-TEXTURE-lesRecoltants.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fdf4f0; /* Fallback */
+  will-change: auto;
+  backface-visibility: hidden;
+}
+
+/* Optimisations pour sections complexes */
+.texture-terracotta-cmyk,
+.texture-ceruse-cmyk {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  contain: layout style paint;
 }
