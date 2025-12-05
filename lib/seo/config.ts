@@ -3,6 +3,8 @@
  * Optimisé pour le référencement local à Bordeaux
  */
 
+import type { Metadata } from "next";
+
 export const siteConfig = {
   name: "Les Récoltants",
   description: "Restaurant bistronomique & marché fermier bio à Bordeaux. Espace de vie nourricier, convivial et durable. Cuisine spontanée qui change tous les jours, 100% bio et local. De la fourche à la fourchette.",
@@ -136,7 +138,7 @@ export const siteConfig = {
   ],
 };
 
-export const defaultMetadata = {
+export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} - Restaurant Bio & Marché Fermier à Bordeaux`,
