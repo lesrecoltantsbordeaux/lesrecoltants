@@ -50,13 +50,13 @@ export default function Footer() {
                 { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.href}>
-                  <Link
+                <Link
                     href={link.href}
                     className="font-courier text-white/60 hover:text-brand-primary transition-colors text-sm inline-block"
-                  >
+                >
                     {link.label}
-                  </Link>
-                </li>
+                </Link>
+              </li>
               ))}
             </ul>
           </div>
@@ -88,22 +88,22 @@ export default function Footer() {
             <h3 className="font-stencil text-brand-primary text-sm font-bold mb-6 uppercase tracking-wider">Contact</h3>
             <div className="space-y-4">
               {siteConfig.business.telephone && (
-                <a
-                  href={`tel:${siteConfig.business.telephone}`}
+                  <a
+                    href={`tel:${siteConfig.business.telephone}`}
                   className="flex items-center gap-3 group"
-                >
+                  >
                   <PhoneIcon size={16} className="text-brand-primary flex-shrink-0" />
                   <span className="font-courier text-white/70 hover:text-brand-primary transition-colors text-sm">
                     {siteConfig.business.telephone}
                   </span>
-                </a>
+                  </a>
               )}
 
               {siteConfig.business.email && (
-                <a
-                  href={`mailto:${siteConfig.business.email}`}
+                  <a
+                    href={`mailto:${siteConfig.business.email}`}
                   className="flex items-center gap-3 group"
-                >
+                  >
                   <MailIcon size={16} className="text-brand-primary flex-shrink-0" />
                   <span className="font-courier text-white/70 hover:text-brand-primary transition-colors text-sm break-all">
                     {siteConfig.business.email}
