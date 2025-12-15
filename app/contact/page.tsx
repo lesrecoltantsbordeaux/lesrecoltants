@@ -2,7 +2,8 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingCTA from "@/components/ui/FloatingCTA";
 import ContactForm from "@/components/ui/ContactForm";
-import PageHero from "@/components/ui/PageHero";
+import HeroCarousel from "@/components/ui/HeroCarousel";
+import ScrollReveal, { RevealGroup } from "@/components/ui/ScrollReveal";
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/seo/config";
 import Image from "next/image";
@@ -29,38 +30,24 @@ export const metadata: Metadata = {
 };
 
 export default function Contact() {
-  const faqs = [
-    {
-      question: "Comment réserver une table au restaurant ?",
-      answer: "Vous pouvez réserver par téléphone, email ou via le formulaire ci-dessous. Nous vous confirmerons votre réservation sous 24h."
-    },
-    {
-      question: "Quel est le délai pour un devis traiteur ?",
-      answer: "Nous vous envoyons un devis détaillé sous 48h après réception de votre demande. Pour les événements urgents, contactez-nous directement par téléphone."
-    },
-    {
-      question: "Peut-on privatiser le restaurant ?",
-      answer: "Oui ! Nous proposons la privatisation totale ou partielle de notre espace pour vos événements de 20 à 80 personnes."
-    },
-    {
-      question: "Livrez-vous les bocaux et produits du marché ?",
-      answer: "Nous proposons un service de retrait sur place. Pour les commandes importantes (>50€), nous étudions la possibilité de livraison à Bordeaux."
-    }
-  ];
-
   return (
     <>
       <Header />
       <FloatingCTA />
 
       <main className="flex-1">
-        {/* HERO */}
-        <PageHero
+        {/* ==================== HERO CAROUSEL ==================== */}
+        <HeroCarousel
+          images={[
+            "/images/contact/carrousel/carrousel-1.jpg",
+            "/images/contact/carrousel/carrousel-2.jpg",
+            "/images/contact/carrousel/carrousel-3.jpg",
+            "/images/contact/carrousel/carrousel-4.jpg",
+            "/images/contact/carrousel/carrousel-5.jpg",
+          ]}
           title="Parlons de votre projet"
           highlightWord="projet"
-          description="Une réservation, une question, un événement à organiser ? Nous sommes à votre écoute et vous répondons sous 24h."
-          imageSrc="/images/contact/contact-hero.jpg"
-          imageAlt="Contact Les Récoltants - Restaurant bistronomique Bordeaux"
+          description={<>Une <span className="text-brand-primary font-semibold">réservation</span>, une question, un <span className="text-brand-primary font-semibold">événement</span> à organiser ? Nous sommes à votre écoute et vous répondons sous 24h.</>}
           badge={{
             icon: <MessageCircleIcon size={14} />,
             text: "Réponse sous 24h · Devis gratuit",
@@ -76,7 +63,6 @@ export default function Contact() {
               href: "#formulaire",
             },
           }}
-          imagePosition="right"
         />
 
         {/* CONTACT GRID MODERNE */}
@@ -87,22 +73,26 @@ export default function Contact() {
             <div className="max-w-6xl mx-auto">
               {/* Section title */}
               <div className="text-center mb-16">
-                <h2 className="text-4xl lg:text-5xl font-stencil font-bold text-neutral-dark mb-6">
-                  Nos{" "}
-                  <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
-                    coordonnées
-                  </span>
-                </h2>
-                <p className="text-xl font-courier text-neutral-medium max-w-2xl mx-auto">
-                  Choisissez le moyen de contact qui vous convient le mieux
-                </p>
+                <ScrollReveal animation="fade-up">
+                  <h2 className="text-4xl lg:text-5xl font-stencil font-bold text-neutral-dark mb-6">
+                    Nos{" "}
+                    <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
+                      coordonnées
+                    </span>
+                  </h2>
+                </ScrollReveal>
+                <ScrollReveal animation="fade-up" delay={100}>
+                  <p className="text-xl font-courier text-neutral-medium max-w-2xl mx-auto">
+                    Choisissez le moyen de contact qui vous convient le mieux pour votre <span className="text-brand-primary font-semibold">réservation</span> ou votre <span className="text-brand-primary font-semibold">événement</span>
+                  </p>
+                </ScrollReveal>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8">
+              <RevealGroup className="grid md:grid-cols-3 gap-8">
                 {/* Téléphone */}
                 <a
                   href={`tel:${siteConfig.business.telephone}`}
-                  className="group bg-gradient-to-br from-ceruse-light to-white rounded-3xl p-8 text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/30 relative overflow-hidden"
+                  className="reveal-item group bg-gradient-to-br from-ceruse-light to-white rounded-3xl p-8 text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/30 relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -135,7 +125,7 @@ export default function Contact() {
                 {/* Email */}
                 <a
                   href={`mailto:${siteConfig.business.email}`}
-                  className="group bg-gradient-to-br from-ceruse-light to-white rounded-3xl p-8 text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/30 relative overflow-hidden"
+                  className="reveal-item group bg-gradient-to-br from-ceruse-light to-white rounded-3xl p-8 text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/30 relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -166,7 +156,7 @@ export default function Contact() {
                 </a>
 
                 {/* Adresse */}
-                <div className="group bg-gradient-to-br from-ceruse-light to-white rounded-3xl p-8 text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/30 relative overflow-hidden">
+                <div className="reveal-item group bg-gradient-to-br from-ceruse-light to-white rounded-3xl p-8 text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/30 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   <div className="relative z-10">
@@ -204,27 +194,7 @@ export default function Contact() {
                     </a>
                   </div>
                 </div>
-              </div>
-
-              {/* Garanties */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto">
-                {[
-                  { icon: CheckIcon, text: "Réponse garantie sous 24h" },
-                  { icon: SparklesIcon, text: "Devis gratuit et sans engagement" },
-                  { icon: CalendarIcon, text: "Disponible 6j/7" },
-                  { icon: MessageCircleIcon, text: "Conseil personnalisé" }
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center gap-3 bg-white rounded-2xl p-6 border border-neutral-light/30 hover:shadow-lg transition-all group"
-                  >
-                    <item.icon size={24} className="text-brand-primary group-hover:scale-110 transition-transform" />
-                    <p className="text-xs font-courier text-center text-neutral-medium font-medium leading-tight">
-                      {item.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              </RevealGroup>
             </div>
           </div>
         </section>
@@ -235,51 +205,58 @@ export default function Contact() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl mx-auto">
               {/* Formulaire */}
               <div className="order-2 lg:order-1">
-                <div className="mb-8">
-                  <div className="inline-flex items-center gap-2 bg-brand-primary/20 border border-brand-primary/30 text-brand-primary px-4 py-2 rounded-full text-sm font-courier font-semibold mb-6">
-                    <MailIcon size={14} />
-                    Formulaire de contact
+                <ScrollReveal animation="fade-right">
+                  <div className="mb-8">
+                    <div className="inline-flex items-center gap-2 bg-brand-primary/20 border border-brand-primary/30 text-brand-primary px-4 py-2 rounded-full text-sm font-courier font-semibold mb-6">
+                      <MailIcon size={14} />
+                      Formulaire de contact
+                    </div>
+
+                    <h2 className="text-4xl lg:text-5xl font-stencil font-bold text-neutral-dark mb-4">
+                      Envoyez-nous un{" "}
+                      <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
+                        message
+                      </span>
+                    </h2>
+
+                    <p className="text-lg font-courier text-neutral-medium leading-relaxed">
+                      Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
+                      <br />
+                      <span className="text-sm">Les champs marqués d'un astérisque (*) sont obligatoires.</span>
+                    </p>
                   </div>
+                </ScrollReveal>
 
-                  <h2 className="text-4xl lg:text-5xl font-stencil font-bold text-neutral-dark mb-4">
-                    Envoyez-nous un{" "}
-                    <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
-                      message
-                    </span>
-                  </h2>
-
-                  <p className="text-lg font-courier text-neutral-medium leading-relaxed">
-                    Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
-                    <br />
-                    <span className="text-sm">Les champs marqués d'un astérisque (*) sont obligatoires.</span>
-                  </p>
-                </div>
-
-                <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-2xl border border-neutral-light/20">
-                  <ContactForm />
-                </div>
+                <ScrollReveal animation="fade-up" delay={100}>
+                  <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-2xl border border-neutral-light/20">
+                    <ContactForm />
+                  </div>
+                </ScrollReveal>
 
                 {/* Trust indicators */}
-                <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm font-courier text-neutral-medium">
-                  <div className="flex items-center gap-2">
-                    <CheckIcon size={16} className="text-brand-primary" />
-                    <span>Données sécurisées</span>
+                <ScrollReveal animation="fade-up" delay={200}>
+                  <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm font-courier text-neutral-medium">
+                    <div className="flex items-center gap-2">
+                      <CheckIcon size={16} className="text-brand-primary" />
+                      <span>Données sécurisées</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckIcon size={16} className="text-brand-primary" />
+                      <span>Réponse rapide</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckIcon size={16} className="text-brand-primary" />
+                      <span>Sans spam</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckIcon size={16} className="text-brand-primary" />
-                    <span>Réponse rapide</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckIcon size={16} className="text-brand-primary" />
-                    <span>Sans spam</span>
-                  </div>
-                </div>
+                </ScrollReveal>
               </div>
 
               {/* Map + Infos */}
               <div className="space-y-8 order-1 lg:order-2">
                 {/* Google Map */}
-                <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-neutral-light/20">
+                <ScrollReveal animation="fade-left">
+                  <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-neutral-light/20">
                   <div className="aspect-[4/3] relative">
                     <iframe
                       src="https://maps.google.com/maps?q=18+rue+Sainte-Colombe+33000+Bordeaux&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -305,10 +282,12 @@ export default function Contact() {
                       <span className="group-hover:translate-x-1 transition-transform">→</span>
                     </a>
                   </div>
-                </div>
+                  </div>
+                </ScrollReveal>
 
                 {/* Horaires détaillés */}
-                <div className="bg-white rounded-3xl p-8 shadow-2xl border border-neutral-light/20">
+                <ScrollReveal animation="fade-left" delay={100}>
+                  <div className="bg-white rounded-3xl p-8 shadow-2xl border border-neutral-light/20">
                   <div className="flex items-center gap-3 mb-6">
                     <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
                       <ClockIcon size={24} className="text-brand-primary" />
@@ -319,36 +298,67 @@ export default function Contact() {
                   </div>
 
                   <div className="space-y-6">
-                    {/* Restaurant & Marché - Lundi, Mardi & Mercredi */}
+                    {/* Lundi & Mardi */}
                     <div className="bg-gradient-to-br from-ceruse-light to-white rounded-2xl p-6 border border-brand-primary/10">
                       <div className="flex items-center gap-2 mb-4">
                         <RestaurantIcon size={20} className="text-brand-primary" />
-                        <span className="text-lg font-courier font-bold text-neutral-dark">Lundi, Mardi & Mercredi</span>
+                        <span className="text-lg font-courier font-bold text-neutral-dark">Lundi & Mardi</span>
                       </div>
                       <div className="space-y-3 font-courier text-neutral-medium">
                         <div className="flex justify-between items-center">
                           <span className="flex items-center gap-2">
                             <span className="w-2 h-2 bg-brand-primary rounded-full"></span>
-                            Restaurant & Marché
+                            Déjeuner uniquement
                           </span>
-                          <span className="font-semibold text-neutral-dark">12h - 19h</span>
+                          <span className="font-semibold text-neutral-dark">12h - 14h</span>
                         </div>
                       </div>
                     </div>
 
-                    {/* Restaurant & Marché - Jeudi, Vendredi, Samedi */}
+                    {/* Mercredi, Jeudi & Vendredi */}
                     <div className="bg-gradient-to-br from-ceruse-light to-white rounded-2xl p-6 border border-brand-primary/10">
                       <div className="flex items-center gap-2 mb-4">
                         <BasketIcon size={20} className="text-brand-primary" />
-                        <span className="text-lg font-courier font-bold text-neutral-dark">Jeudi, Vendredi & Samedi</span>
+                        <span className="text-lg font-courier font-bold text-neutral-dark">Mercredi, Jeudi & Vendredi</span>
                       </div>
                       <div className="space-y-3 font-courier text-neutral-medium">
                         <div className="flex justify-between items-center">
                           <span className="flex items-center gap-2">
                             <span className="w-2 h-2 bg-brand-primary rounded-full"></span>
-                            Restaurant & Marché
+                            Déjeuner
                           </span>
-                          <span className="font-semibold text-neutral-dark">12h - 22h30</span>
+                          <span className="font-semibold text-neutral-dark">12h - 14h</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="flex items-center gap-2">
+                            <span className="w-2 h-2 bg-brand-primary rounded-full"></span>
+                            Dîner
+                          </span>
+                          <span className="font-semibold text-neutral-dark">19h - 21h</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Samedi */}
+                    <div className="bg-gradient-to-br from-ceruse-light to-white rounded-2xl p-6 border border-brand-primary/10">
+                      <div className="flex items-center gap-2 mb-4">
+                        <BasketIcon size={20} className="text-brand-primary" />
+                        <span className="text-lg font-courier font-bold text-neutral-dark">Samedi</span>
+                      </div>
+                      <div className="space-y-3 font-courier text-neutral-medium">
+                        <div className="flex justify-between items-center">
+                          <span className="flex items-center gap-2">
+                            <span className="w-2 h-2 bg-brand-primary rounded-full"></span>
+                            Brunch & Déjeuner
+                          </span>
+                          <span className="font-semibold text-neutral-dark">10h - 14h</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="flex items-center gap-2">
+                            <span className="w-2 h-2 bg-brand-primary rounded-full"></span>
+                            Dîner
+                          </span>
+                          <span className="font-semibold text-neutral-dark">19h - 21h</span>
                         </div>
                       </div>
                     </div>
@@ -361,7 +371,8 @@ export default function Contact() {
                       </p>
                     </div>
                   </div>
-                </div>
+                  </div>
+                </ScrollReveal>
               </div>
             </div>
           </div>
@@ -374,42 +385,83 @@ export default function Contact() {
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
-                <div className="inline-flex items-center gap-2 bg-brand-primary/20 border border-brand-primary/30 text-brand-primary px-4 py-2 rounded-full text-sm font-courier font-semibold mb-6">
-                  <MessageCircleIcon size={14} />
-                  Questions fréquentes
+                <ScrollReveal animation="fade-up">
+                  <div className="inline-flex items-center gap-2 bg-brand-primary/20 border border-brand-primary/30 text-brand-primary px-4 py-2 rounded-full text-sm font-courier font-semibold mb-6">
+                    <MessageCircleIcon size={14} />
+                    Questions fréquentes
+                  </div>
+                </ScrollReveal>
+
+                <ScrollReveal animation="fade-up" delay={100}>
+                  <h2 className="text-4xl lg:text-5xl font-stencil font-bold text-neutral-dark mb-6">
+                    Vous avez des{" "}
+                    <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
+                      questions
+                    </span>{" "}
+                    ?
+                  </h2>
+                </ScrollReveal>
+
+                <ScrollReveal animation="fade-up" delay={200}>
+                  <p className="text-xl font-courier text-neutral-medium">
+                    Nous avons rassemblé les réponses aux questions les plus courantes sur nos <span className="text-brand-primary font-semibold">services</span>
+                  </p>
+                </ScrollReveal>
+              </div>
+
+              <RevealGroup className="space-y-6">
+                {/* FAQ 1 */}
+                <div className="reveal-item bg-gradient-to-br from-ceruse-light to-white rounded-2xl p-8 border border-neutral-light/30 hover:shadow-xl transition-all duration-300 group">
+                  <h3 className="text-xl font-stencil font-bold text-neutral-dark mb-4 flex items-start gap-3 group-hover:text-brand-primary transition-colors">
+                    <span className="flex-shrink-0 w-8 h-8 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary font-stencil font-bold text-sm group-hover:scale-110 transition-transform">
+                      ?
+                    </span>
+                    Comment réserver une table au restaurant ?
+                  </h3>
+                  <p className="font-courier text-neutral-medium leading-relaxed pl-11">
+                    Vous pouvez réserver par téléphone, email ou via le formulaire ci-dessous. Nous vous confirmerons votre <span className="text-brand-primary font-semibold">réservation</span> sous 24h.
+                  </p>
                 </div>
 
-                <h2 className="text-4xl lg:text-5xl font-stencil font-bold text-neutral-dark mb-6">
-                  Vous avez des{" "}
-                  <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
-                    questions
-                  </span>{" "}
-                  ?
-                </h2>
+                {/* FAQ 2 */}
+                <div className="reveal-item bg-gradient-to-br from-ceruse-light to-white rounded-2xl p-8 border border-neutral-light/30 hover:shadow-xl transition-all duration-300 group">
+                  <h3 className="text-xl font-stencil font-bold text-neutral-dark mb-4 flex items-start gap-3 group-hover:text-brand-primary transition-colors">
+                    <span className="flex-shrink-0 w-8 h-8 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary font-stencil font-bold text-sm group-hover:scale-110 transition-transform">
+                      ?
+                    </span>
+                    Quel est le délai pour un devis traiteur ?
+                  </h3>
+                  <p className="font-courier text-neutral-medium leading-relaxed pl-11">
+                    Nous vous envoyons un <span className="text-brand-primary font-semibold">devis gratuit</span> sous 48h après réception de votre demande. Pour les événements urgents, contactez-nous directement par téléphone.
+                  </p>
+                </div>
 
-                <p className="text-xl font-courier text-neutral-medium">
-                  Nous avons rassemblé les réponses aux questions les plus courantes
-                </p>
-              </div>
+                {/* FAQ 3 */}
+                <div className="reveal-item bg-gradient-to-br from-ceruse-light to-white rounded-2xl p-8 border border-neutral-light/30 hover:shadow-xl transition-all duration-300 group">
+                  <h3 className="text-xl font-stencil font-bold text-neutral-dark mb-4 flex items-start gap-3 group-hover:text-brand-primary transition-colors">
+                    <span className="flex-shrink-0 w-8 h-8 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary font-stencil font-bold text-sm group-hover:scale-110 transition-transform">
+                      ?
+                    </span>
+                    Peut-on privatiser le restaurant ?
+                  </h3>
+                  <p className="font-courier text-neutral-medium leading-relaxed pl-11">
+                    Oui ! Nous proposons la <span className="text-brand-primary font-semibold">privatisation</span> totale ou partielle de notre espace pour vos événements de 20 à 80 personnes.
+                  </p>
+                </div>
 
-              <div className="space-y-6">
-                {faqs.map((faq, index) => (
-                  <div
-                    key={index}
-                    className="bg-gradient-to-br from-ceruse-light to-white rounded-2xl p-8 border border-neutral-light/30 hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <h3 className="text-xl font-stencil font-bold text-neutral-dark mb-4 flex items-start gap-3 group-hover:text-brand-primary transition-colors">
-                      <span className="flex-shrink-0 w-8 h-8 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary font-stencil font-bold text-sm group-hover:scale-110 transition-transform">
-                        ?
-                      </span>
-                      {faq.question}
-                    </h3>
-                    <p className="font-courier text-neutral-medium leading-relaxed pl-11">
-                      {faq.answer}
-                    </p>
-                  </div>
-                ))}
-              </div>
+                {/* FAQ 4 */}
+                <div className="reveal-item bg-gradient-to-br from-ceruse-light to-white rounded-2xl p-8 border border-neutral-light/30 hover:shadow-xl transition-all duration-300 group">
+                  <h3 className="text-xl font-stencil font-bold text-neutral-dark mb-4 flex items-start gap-3 group-hover:text-brand-primary transition-colors">
+                    <span className="flex-shrink-0 w-8 h-8 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary font-stencil font-bold text-sm group-hover:scale-110 transition-transform">
+                      ?
+                    </span>
+                    Livrez-vous les bocaux et produits du marché ?
+                  </h3>
+                  <p className="font-courier text-neutral-medium leading-relaxed pl-11">
+                    Nous proposons un service de retrait sur place pour nos <span className="text-brand-primary font-semibold">produits bio et locaux</span>. Pour les commandes importantes (&gt;50€), nous étudions la possibilité de livraison à Bordeaux.
+                  </p>
+                </div>
+              </RevealGroup>
             </div>
           </div>
         </section>

@@ -53,8 +53,8 @@ export default function PageHero({
               alt={imageAlt}
               fill
               priority
-              quality={75}
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={100}
+              sizes="100vw"
               className="object-cover"
               style={{ objectPosition: "center" }}
             />

@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingCTA from "@/components/ui/FloatingCTA";
+import ScrollReveal, { RevealGroup } from "@/components/ui/ScrollReveal";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -35,7 +36,7 @@ export default function Home() {
               alt=""
               fill
               priority
-              quality={75}
+              quality={100}
               sizes="100vw"
               className="object-cover"
               style={{ objectPosition: "center" }}
@@ -73,23 +74,23 @@ export default function Home() {
                 {/* Titre Principal */}
                 <div className="animate-fade-in-up stagger-1">
                   <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-stencil font-bold text-white leading-[0.95] tracking-tighter">
-                    De la terre
+                    Du champ
                   </h1>
-                  <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-stencil font-bold text-white leading-[0.95] tracking-tighter mt-2">
-                    à votre
-                  </h1>
-                  <div className="relative inline-block mt-4">
-                    <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-stencil font-light italic bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent leading-[0.95] tracking-tighter">
-                      assiette
-                </h1>
+                  <div className="relative inline-block mt-2">
+                    <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-stencil font-bold text-white leading-[0.95] tracking-tighter">
+                      à votre{" "}
+                      <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
+                        assiette
+                      </span>
+                    </h1>
                     <div className="hidden lg:block absolute -right-16 top-1/2 -translate-y-1/2 w-12 h-12 border-2 border-brand-primary/30 rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Description */}
                 <div className="max-w-xl animate-fade-in-up stagger-2">
-                  <p className="text-lg lg:text-xl font-courier text-white/90 leading-relaxed border-l-2 border-brand-primary/30 pl-6 lg:pl-8">
-                    Un restaurant bistronomique et un marché fermier à Bordeaux où chaque produit raconte l'histoire de notre ferme partenaire, à moins de 50km d'ici.
+                  <p className="text-lg lg:text-xl font-courier text-white/90 leading-relaxed">
+                    Un restaurant bistronomique à Bordeaux, où nous avons choisi de cuisiner les produits des <span className="text-brand-primary font-semibold">fermes bio</span> voisines. Des <span className="text-brand-primary font-semibold">produits proches</span>, des liens forts, une cuisine qui respecte l'essentiel.
                   </p>
                 </div>
 
@@ -133,14 +134,14 @@ export default function Home() {
         {/* ==================== STATS BANNER ==================== */}
         <section className="py-12 lg:py-16 bg-white border-y-2 border-neutral-light/20">
           <div className="container mx-auto px-4 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto">
+            <RevealGroup className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 max-w-6xl mx-auto">
               {[
                 { value: "100%", label: "Bio & Local", sublabel: "Certifié AB" },
                 { value: "<50km", label: "Circuit court", sublabel: "Ferme partenaire" },
                 { value: "0", label: "Pesticide", sublabel: "Sol vivant" },
                 { value: "100%", label: "De saison", sublabel: "Fraîcheur garantie" },
               ].map((stat, index) => (
-                <div key={index} className="text-center">
+                <div key={index} className="text-center reveal-item">
                   <div className="text-5xl lg:text-6xl font-stencil font-bold text-brand-primary mb-3">
                     {stat.value}
                   </div>
@@ -152,7 +153,7 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </div>
+            </RevealGroup>
           </div>
         </section>
 
@@ -163,66 +164,71 @@ export default function Home() {
 
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             {/* En-tête de section */}
-            <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
-              <div className="inline-flex items-center gap-2 text-brand-primary text-sm font-courier font-semibold uppercase tracking-wider mb-6">
-                <HeartIcon size={16} />
-                Nos engagements
-              </div>
-              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-stencil font-bold text-neutral-dark mb-6 leading-tight">
-                Une cuisine qui a du{" "}
-                <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
-                  sens
-                </span>
-              </h2>
-              <p className="text-lg lg:text-xl font-courier text-neutral-dark leading-relaxed">
-                Chaque décision que nous prenons, de la fourche à la fourchette,
-                est guidée par un engagement profond envers la terre, les artisans et votre santé.
-              </p>
+            <div className="text-center mb-16 lg:mb-20">
+              <ScrollReveal animation="fade-up">
+                <div className="inline-flex items-center gap-2 text-brand-primary text-sm font-courier font-semibold uppercase tracking-wider mb-6">
+                  <HeartIcon size={16} />
+                  Nos engagements
+                </div>
+              </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={100}>
+                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-stencil font-bold text-neutral-dark mb-6 leading-tight max-w-3xl mx-auto">
+                  Une cuisine qui a du{" "}
+                  <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
+                    sens
+                  </span>
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={200}>
+                <p className="text-lg lg:text-xl font-courier text-neutral-dark leading-relaxed max-w-5xl mx-auto">
+                  Chaque ingrédient, chaque geste et chaque choix naît d'un lien sincère avec la <span className="text-brand-primary font-semibold">terre</span>, les <span className="text-brand-primary font-semibold">producteurs</span> qui la cultivent et le soin que nous voulons apporter à votre assiette.
+                </p>
+              </ScrollReveal>
             </div>
 
             {/* Grid des valeurs */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <RevealGroup className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* Valeur 1 */}
-              <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/20">
+              <div className="reveal-item group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/20">
                 <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <LeafIcon size={28} className="text-brand-primary" />
                 </div>
                 <h3 className="text-xl font-stencil font-bold text-brand-primary mb-3">
-                  100% Bio
+                  Zéro compromis
                 </h3>
                 <p className="font-courier text-neutral-dark leading-relaxed">
-                  Chaque produit est cultivé dans le respect du sol vivant et sans pesticides. Une agriculture qui nourrit sans épuiser.
+                  Des produits bruts cultivés en <span className="text-brand-primary font-semibold">agriculture bio</span>, paysanne, dans le respect d'un <span className="text-brand-primary font-semibold">sol vivant</span>, sans pesticides…
                 </p>
-                  </div>
+              </div>
 
               {/* Valeur 2 */}
-              <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/20">
+              <div className="reveal-item group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/20">
                 <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <HandshakeIcon size={28} className="text-brand-primary" />
-                  </div>
+                </div>
                 <h3 className="text-xl font-stencil font-bold text-brand-primary mb-3">
-                  Circuit Court
-                  </h3>
+                  Direct Producteurs
+                </h3>
                 <p className="font-courier text-neutral-dark leading-relaxed">
-                  Du champ à votre assiette en moins de 50km. Des produits cueillis le matin, servis le midi. C'est ça, le vrai goût.
-                  </p>
-                  </div>
+                  Des <span className="text-brand-primary font-semibold">fermes voisines</span> qui nous livrent en <span className="text-brand-primary font-semibold">direct</span>, de 20km à 150km au plus loin. C'est ça le vrai goût : <span className="text-brand-primary font-semibold">frais</span>, simple, immédiat.
+                </p>
+              </div>
 
               {/* Valeur 3 */}
-              <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/20">
+              <div className="reveal-item group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/20">
                 <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <RecycleIcon size={28} className="text-brand-primary" />
                 </div>
                 <h3 className="text-xl font-stencil font-bold text-brand-primary mb-3">
-                  Zéro Déchet
+                  La ferme des Récoltants
                 </h3>
                 <p className="font-courier text-neutral-dark leading-relaxed">
-                  Bocaux consignés, compostage, transformation des invendus... Chaque légume a sa place, rien ne finit à la poubelle.
+                  Nous faisons pousser nos légumes en <span className="text-brand-primary font-semibold">agriculture bio</span>, dans notre propre <span className="text-brand-primary font-semibold">champ à 20km</span> d'ici. Rien de plus vrai, rien de plus simple.
                 </p>
               </div>
 
               {/* Valeur 4 */}
-              <div className="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/20">
+              <div className="reveal-item group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/20">
                 <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <UsersIcon size={28} className="text-brand-primary" />
                 </div>
@@ -230,9 +236,105 @@ export default function Home() {
                   Équité
                 </h3>
                 <p className="font-courier text-neutral-dark leading-relaxed">
-                  Un prix juste pour le producteur, un tarif honnête pour vous, et des conditions dignes pour toute l'équipe. L'équité à tous les niveaux.
+                  Un <span className="text-brand-primary font-semibold">prix juste</span> pour le producteur, un tarif honnête pour vous, et des conditions dignes pour toute l'équipe. L'<span className="text-brand-primary font-semibold">équité</span> à tous les niveaux.
                 </p>
               </div>
+            </RevealGroup>
+          </div>
+        </section>
+
+        {/* ==================== LA CHARTE DES RÉCOLTANTS ==================== */}
+        <section id="charte-section" className="py-24 lg:py-32 texture-terracotta-cmyk-image relative overflow-hidden">
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
+            <div className="max-w-4xl mx-auto">
+              {/* Titre principal */}
+              <ScrollReveal animation="scale" duration={800}>
+                <div className="mb-4 lg:mb-6 flex justify-center">
+                  <svg viewBox="0 0 1100 200" className="w-full max-w-5xl h-auto">
+                    <defs>
+                      <path id="arc-path" d="M 30 150 Q 550 30 1070 150" fill="none" />
+                    </defs>
+                    <text className="text-white font-stencil font-bold uppercase" fontSize="70" fill="currentColor">
+                      <textPath href="#arc-path" startOffset="50%" textAnchor="middle">
+                        LA CHARTE DES RÉCOLTANTS
+                      </textPath>
+                    </text>
+                  </svg>
+                </div>
+              </ScrollReveal>
+
+              {/* Liste des principes */}
+              <ul className="space-y-1 lg:space-y-2">
+                <li className="flex items-center justify-center">
+                  <p className="font-courier text-white text-lg lg:text-xl leading-relaxed text-center">
+                    Un produit qui a du <strong className="uppercase">GOÛT</strong>
+                  </p>
+                </li>
+                <li className="flex items-center justify-center">
+                  <span className="text-white font-courier text-lg lg:text-xl">—</span>
+                </li>
+                <li className="flex items-center justify-center">
+                  <p className="font-courier text-white text-lg lg:text-xl leading-relaxed text-center">
+                    Notre potager bio directement dans votre assiette
+                  </p>
+                </li>
+                <li className="flex items-center justify-center">
+                  <span className="text-white font-courier text-lg lg:text-xl">—</span>
+                </li>
+                <li className="flex items-center justify-center">
+                  <p className="font-courier text-white text-lg lg:text-xl leading-relaxed text-center">
+                    De l'agriculture bio, paysanne et durable sur sol <strong className="uppercase">VIVANT</strong> !
+                  </p>
+                </li>
+                <li className="flex items-center justify-center">
+                  <span className="text-white font-courier text-lg lg:text-xl">—</span>
+                </li>
+                <li className="flex items-center justify-center">
+                  <p className="font-courier text-white text-lg lg:text-xl leading-relaxed text-center">
+                    La <strong className="uppercase">SAISONNALITÉ</strong> 100% respectée
+                  </p>
+                </li>
+                <li className="flex items-center justify-center">
+                  <span className="text-white font-courier text-lg lg:text-xl">—</span>
+                </li>
+                <li className="flex items-center justify-center">
+                  <p className="font-courier text-white text-lg lg:text-xl leading-relaxed text-center">
+                    Plein phare sur le terroir et les ressources locales
+                  </p>
+                </li>
+                <li className="flex items-center justify-center">
+                  <span className="text-white font-courier text-lg lg:text-xl">—</span>
+                </li>
+                <li className="flex items-center justify-center">
+                  <p className="font-courier text-white text-lg lg:text-xl leading-relaxed text-center">
+                    Modes d'élevages durables et <strong className="uppercase">RESPECTUEUX</strong> du vivant
+                  </p>
+                </li>
+                <li className="flex items-center justify-center">
+                  <span className="text-white font-courier text-lg lg:text-xl">—</span>
+                </li>
+                <li className="flex items-center justify-center">
+                  <p className="font-courier text-white text-lg lg:text-xl leading-relaxed text-center">
+                    Sauvegarde du savoir-faire artisanal
+                  </p>
+                </li>
+                <li className="flex items-center justify-center">
+                  <span className="text-white font-courier text-lg lg:text-xl">—</span>
+                </li>
+                <li className="flex items-center justify-center">
+                  <p className="font-courier text-white text-lg lg:text-xl leading-relaxed text-center">
+                    <strong className="uppercase">TRANSPARENCE</strong> à tous les étages
+                  </p>
+                </li>
+                <li className="flex items-center justify-center">
+                  <span className="text-white font-courier text-lg lg:text-xl">—</span>
+                </li>
+                <li className="flex items-center justify-center">
+                  <p className="font-courier text-white text-lg lg:text-xl leading-relaxed text-center">
+                    Un prix juste pour le consommateur et le producteur
+                  </p>
+                </li>
+              </ul>
             </div>
           </div>
         </section>
@@ -245,174 +347,44 @@ export default function Home() {
 
             {/* En-tête de section */}
             <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
-              <div className="inline-flex items-center gap-2 text-brand-primary text-sm font-courier font-semibold uppercase tracking-wider mb-6">
-                <BasketIcon size={16} />
-                Notre ferme
-              </div>
-              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-stencil font-bold text-neutral-dark mb-6 leading-tight">
-                Le marché{" "}
-                <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
-                  fermier
-                </span>{" "}
-                directement dans vos paniers !
-              </h2>
-              <p className="text-lg lg:text-xl font-courier text-neutral-dark leading-relaxed mb-8">
-                Primeur • Fromagerie • Crèmerie • Boucherie/Charcuterie • Cave et Épicerie sèche
-              </p>
-              <div className="inline-block bg-brand-primary/10 text-brand-primary px-6 py-3 rounded-full font-courier font-bold">
-                Ici, vous ne trouverez que des produits bio de saison !
-              </div>
+              <ScrollReveal animation="fade-up">
+                <div className="inline-flex items-center gap-2 text-brand-primary text-sm font-courier font-semibold uppercase tracking-wider mb-6">
+                  <BasketIcon size={16} />
+                  Notre ferme
+                </div>
+              </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={100}>
+                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-stencil font-bold text-neutral-dark mb-6 leading-tight">
+                  Le marché{" "}
+                  <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
+                    fermier
+                  </span>{" "}
+                  directement dans vos paniers !
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={200}>
+                <p className="text-lg lg:text-xl font-courier text-neutral-dark leading-relaxed mb-8">
+                  Primeur • Fromagerie • Crèmerie • Boucherie/Charcuterie • Cave et Épicerie sèche
+                </p>
+              </ScrollReveal>
+              <ScrollReveal animation="scale" delay={300}>
+                <div className="inline-block bg-brand-primary/10 text-brand-primary px-6 py-3 rounded-full font-courier font-bold">
+                  Ici, vous ne trouverez que des produits bio de saison !
+                </div>
+              </ScrollReveal>
             </div>
 
             {/* Message principal */}
-            <div className="max-w-4xl mx-auto mb-20 text-center">
-              <p className="text-xl lg:text-2xl font-courier text-neutral-dark leading-relaxed">
-                Le message est simple : <span className="font-bold text-brand-primary">défendre coûte que coûte le terroir</span>, respecter le vivant
-                et se fournir exclusivement auprès de producteurs et artisans locaux.
-              </p>
-              <p className="text-lg lg:text-xl font-courier text-neutral-medium mt-4">
-                Parce qu'il est possible de proposer une cuisine gourmande ET ultra locale.
-              </p>
-            </div>
-
-            {/* Grid en 2 colonnes */}
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
-
-              {/* Colonne 1 : Un étal de produits frais */}
-              <div className="bg-ceruse-light rounded-3xl p-8 lg:p-10">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <LeafIcon size={24} className="text-brand-primary" />
-                  </div>
-                  <h3 className="text-2xl lg:text-3xl font-stencil font-bold text-brand-primary leading-tight">
-                    Un étal de produits frais et qui ont du goût !
-                  </h3>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon size={20} className="text-brand-primary flex-shrink-0 mt-1" />
-                    <p className="font-courier text-neutral-dark">
-                      Parce qu'on leur a laissé le temps de pousser, de mûrir, de grandir
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon size={20} className="text-brand-primary flex-shrink-0 mt-1" />
-                    <p className="font-courier text-neutral-dark">
-                      Parce qu'on les a récoltés à maturité
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon size={20} className="text-brand-primary flex-shrink-0 mt-1" />
-                    <p className="font-courier text-neutral-dark">
-                      Parce qu'ils sont ultra-frais, cueillis du jour-même
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon size={20} className="text-brand-primary flex-shrink-0 mt-1" />
-                    <p className="font-courier text-neutral-dark">
-                      Parce qu'on a sélectionné des variétés anciennes et gustatives
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon size={20} className="text-brand-primary flex-shrink-0 mt-1" />
-                    <p className="font-courier text-neutral-dark">
-                      Parce qu'ils viennent d'à côté et sont livrés en direct, sans intermédiaire
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Colonne 2 : Tout se transforme */}
-              <div className="bg-ceruse-light rounded-3xl p-8 lg:p-10">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <RecycleIcon size={24} className="text-brand-primary" />
-                  </div>
-                  <h3 className="text-2xl lg:text-3xl font-stencil font-bold text-brand-primary leading-tight">
-                    Tout se transforme, rien ne se perd !
-                  </h3>
-                </div>
-
-                <p className="font-courier text-neutral-dark text-lg leading-relaxed mb-6">
-                  Les produits de notre étal sont transformés dans notre labo de cuisine en soupes,
-                  coulis, gâteaux, tartinades, purées…
+            <ScrollReveal animation="fade-up" delay={100}>
+              <div className="max-w-4xl mx-auto mb-20 text-center">
+                <p className="text-xl lg:text-2xl font-courier text-neutral-dark leading-relaxed">
+                  Le message est simple : <span className="font-bold text-brand-primary">défendre coûte que coûte le terroir</span>, respecter le <span className="text-brand-primary font-semibold">vivant</span> et se fournir exclusivement auprès de <span className="text-brand-primary font-semibold">producteurs</span> et <span className="text-brand-primary font-semibold">artisans locaux</span>.
                 </p>
-
-                <div className="bg-white rounded-2xl p-6 border-l-4 border-brand-primary">
-                  <p className="font-courier text-neutral-dark font-semibold">
-                    Retrouvez notre gamme de bocaux cuisinés : tout est 100% maison, préparé ici,
-                    sur place avec les produits frais de l'étal.
-                  </p>
-                </div>
+                <p className="text-lg lg:text-xl font-courier text-neutral-medium mt-4">
+                  Parce qu'il est possible de proposer une cuisine gourmande ET <span className="text-brand-primary font-semibold">ultra locale</span>.
+                </p>
               </div>
-            </div>
-
-            {/* La charte des récoltants */}
-            <div className="texture-terracotta-cmyk rounded-3xl p-10 lg:p-12 max-w-4xl mx-auto">
-              {/* Titre principal */}
-              <h3 className="text-4xl lg:text-5xl xl:text-6xl font-stencil font-bold mb-12 lg:mb-16 text-brand-primary uppercase tracking-tight text-center">
-                LA CHARTE DES RÉCOLTANTS
-              </h3>
-
-              {/* Liste des principes */}
-              <ul className="space-y-4 lg:space-y-5">
-                <li className="flex items-center justify-center gap-3">
-                  <span className="text-brand-primary font-courier text-lg lg:text-xl">—</span>
-                  <p className="font-courier text-brand-primary text-lg lg:text-xl leading-relaxed text-center">
-                    Un produit qui a du <strong className="uppercase">GOÛT</strong>
-                  </p>
-                </li>
-                <li className="flex items-center justify-center gap-3">
-                  <span className="text-brand-primary font-courier text-lg lg:text-xl">—</span>
-                  <p className="font-courier text-brand-primary text-lg lg:text-xl leading-relaxed text-center">
-                    Notre potager bio directement dans votre assiette
-                  </p>
-                </li>
-                <li className="flex items-center justify-center gap-3">
-                  <span className="text-brand-primary font-courier text-lg lg:text-xl">—</span>
-                  <p className="font-courier text-brand-primary text-lg lg:text-xl leading-relaxed text-center">
-                    De l'agriculture bio, paysanne et durable sur sol <strong className="uppercase">VIVANT</strong> !
-                  </p>
-                </li>
-                <li className="flex items-center justify-center gap-3">
-                  <span className="text-brand-primary font-courier text-lg lg:text-xl">—</span>
-                  <p className="font-courier text-brand-primary text-lg lg:text-xl leading-relaxed text-center">
-                    La <strong className="uppercase">SAISONALITÉ</strong> 100% respectée
-                  </p>
-                </li>
-                <li className="flex items-center justify-center gap-3">
-                  <span className="text-brand-primary font-courier text-lg lg:text-xl">—</span>
-                  <p className="font-courier text-brand-primary text-lg lg:text-xl leading-relaxed text-center">
-                    Plein phare sur le terroir et les ressources locales
-                  </p>
-                </li>
-                <li className="flex items-center justify-center gap-3">
-                  <span className="text-brand-primary font-courier text-lg lg:text-xl">—</span>
-                  <p className="font-courier text-brand-primary text-lg lg:text-xl leading-relaxed text-center">
-                    Modes d'élevages durables et <strong className="uppercase">RESPECTUEUX</strong> du vivant
-                  </p>
-                </li>
-                <li className="flex items-center justify-center gap-3">
-                  <span className="text-brand-primary font-courier text-lg lg:text-xl">—</span>
-                  <p className="font-courier text-brand-primary text-lg lg:text-xl leading-relaxed text-center">
-                    Sauvegarde du savoir-faire artisanal
-                  </p>
-                </li>
-                <li className="flex items-center justify-center gap-3">
-                  <span className="text-brand-primary font-courier text-lg lg:text-xl">—</span>
-                  <p className="font-courier text-brand-primary text-lg lg:text-xl leading-relaxed text-center">
-                    <strong className="uppercase">TRANSPARENCE</strong> à tous les étages
-                  </p>
-                </li>
-                <li className="flex items-center justify-center gap-3">
-                  <span className="text-brand-primary font-courier text-lg lg:text-xl">—</span>
-                  <p className="font-courier text-brand-primary text-lg lg:text-xl leading-relaxed text-center">
-                    Un prix juste pour le consommateur et le producteur
-                  </p>
-                </li>
-              </ul>
-            </div>
+            </ScrollReveal>
 
           </div>
         </section>
@@ -424,32 +396,38 @@ export default function Home() {
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             {/* Intro Section */}
             <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
-              <div className="inline-flex items-center gap-2 text-brand-primary text-sm font-courier font-semibold uppercase tracking-wider mb-6">
-                <SparklesIcon size={16} />
-                Notre univers
-              </div>
-              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-stencil font-bold text-neutral-dark mb-6 leading-tight">
-                Un écosystème complet
-                <br />
-                <span className="text-neutral-medium font-stencil font-light">
-                  autour du{" "}
-                  <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent font-bold">
-                    local
+              <ScrollReveal animation="fade-up">
+                <div className="inline-flex items-center gap-2 text-brand-primary text-sm font-courier font-semibold uppercase tracking-wider mb-6">
+                  <SparklesIcon size={16} />
+                  Notre univers
+                </div>
+              </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={100}>
+                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-stencil font-bold text-neutral-dark mb-6 leading-tight">
+                  Un écosystème vertueux
+                  <br />
+                  <span className="text-neutral-medium font-stencil font-light">
+                    autour du{" "}
+                    <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent font-bold">
+                      local
+                    </span>
                   </span>
-                </span>
-              </h2>
-              <p className="text-lg lg:text-xl font-courier text-neutral-dark leading-relaxed">
-                Du restaurant au marché fermier, découvrez toutes les facettes de
-                notre engagement pour une alimentation responsable.
-              </p>
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={200}>
+                <p className="text-lg lg:text-xl font-courier text-neutral-dark leading-relaxed">
+                  Du restaurant à la ferme, découvrez toutes les facettes de notre engagement pour une <span className="text-brand-primary font-semibold">alimentation responsable</span>.
+                </p>
+              </ScrollReveal>
             </div>
 
             {/* Grid Services */}
             <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
               {/* Restaurant - Large */}
+              <ScrollReveal animation="fade-up" delay={0} className="lg:col-span-2">
                 <Link
                   href="/restaurant"
-                className="group lg:col-span-2 bg-white rounded-3xl p-10 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 border border-neutral-light/20 hover:border-brand-primary/30 hover:-translate-y-2"
+                className="group block bg-white rounded-3xl p-10 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 border border-neutral-light/20 hover:border-brand-primary/30 hover:-translate-y-2"
               >
                 <div className="flex flex-col lg:flex-row gap-8 items-start">
                   <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all">
@@ -459,10 +437,11 @@ export default function Home() {
                     <h3 className="text-2xl lg:text-3xl font-stencil font-bold text-brand-primary mb-4">
                       Restaurant bistronomique
                     </h3>
-                    <p className="text-base lg:text-lg font-courier text-neutral-dark leading-relaxed mb-6">
-                      Une cuisine bistronomique où chaque assiette raconte l'histoire de notre ferme.
-                      La carte change au rythme des saisons, jamais au rythme des tendances.
-                    </p>
+                    <div className="text-base lg:text-lg font-courier text-neutral-dark leading-relaxed mb-6 space-y-3">
+                      <p>Chez les Récoltants, tout repose sur un <span className="text-brand-primary font-semibold">cercle vertueux</span> qui relie la ferme, la cuisine et la terre.</p>
+                      <p>Nos légumes poussent dans des <span className="text-brand-primary font-semibold">sols vivants</span>, à deux pas d'ici. Nous les cuisinons dans leur intégralité, sans gâchis. Et ce qui reste retourne nourrir le sol grâce à notre <span className="text-brand-primary font-semibold">compost</span>.</p>
+                      <p>Du champ à l'assiette, puis de l'assiette à la terre : c'est notre manière de prendre soin du goût, des <span className="text-brand-primary font-semibold">producteurs</span> et du territoire.</p>
+                    </div>
                     <div className="inline-flex items-center gap-2 text-brand-primary font-courier font-semibold group-hover:gap-3 transition-all">
                   Voir la carte
                       <ArrowRightIcon size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -470,71 +449,78 @@ export default function Home() {
                   </div>
                 </div>
               </Link>
+              </ScrollReveal>
 
               {/* Marché */}
-              <Link
-                href="/marche-bocaux"
-                className="group bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-neutral-light/20 hover:border-brand-primary/30 hover:-translate-y-2"
-              >
-                <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all">
-                  <BasketIcon size={32} className="text-brand-primary" />
-                </div>
-                <h3 className="text-2xl font-stencil font-bold text-brand-primary mb-4">
-                  Marché fermier
-                </h3>
-                <p className="text-base font-courier text-neutral-dark leading-relaxed mb-6">
-                  Fruits, légumes, fromages, viandes... Tout ce qui pousse dans notre ferme partenaire arrive frais chez vous.
-                </p>
-                <div className="inline-flex items-center gap-2 text-brand-primary font-courier font-semibold group-hover:gap-3 transition-all">
-                  Découvrir
-                  <ArrowRightIcon size={16} className="group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-
-              {/* Bocaux */}
-              <Link
-                href="/marche-bocaux"
-                className="group bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-neutral-light/20 hover:border-brand-primary/30 hover:-translate-y-2"
-              >
-                <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all">
-                  <JarIcon size={32} className="text-brand-primary" />
-                </div>
-                <h3 className="text-2xl font-stencil font-bold text-brand-primary mb-4">
-                  Bocaux cuisinés
-                </h3>
-                <p className="text-base font-courier text-neutral-dark leading-relaxed mb-6">
-                  Soupes, plats mijotés, desserts... Nos recettes faites maison, prêtes à réchauffer. Le bocal se rapporte, le plaisir reste.
-                </p>
-                <div className="inline-flex items-center gap-2 text-brand-primary font-courier font-semibold group-hover:gap-3 transition-all">
-                  En savoir plus
-                  <ArrowRightIcon size={16} className="group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-
-              {/* Traiteur - Large */}
-              <Link
-                href="/traiteur-privatisation"
-                className="group lg:col-span-2 bg-gradient-to-br from-neutral-dark to-neutral-medium text-white rounded-3xl p-10 lg:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
-              >
-                <div className="flex flex-col lg:flex-row gap-8 items-start">
-                  <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all">
-                    <ChefHatIcon size={32} className="text-white" />
+              <ScrollReveal animation="fade-up" delay={100}>
+                <Link
+                  href="/marche-bocaux"
+                  className="group block bg-white rounded-3xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-neutral-light/20 hover:border-brand-primary/30 hover:-translate-y-2 h-full"
+                >
+                  <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all">
+                    <BasketIcon size={32} className="text-brand-primary" />
                   </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl lg:text-3xl font-stencil font-bold text-brand-primary mb-4">
-                      Traiteur & Privatisation
-                    </h3>
-                    <p className="text-base lg:text-lg font-courier text-white/90 leading-relaxed mb-6">
-                      Privatisez notre espace pour vos événements ou optez pour notre service traiteur.
-                      On amène la ferme à votre fête, avec la même exigence qu'au restaurant.
-                    </p>
-                    <div className="inline-flex items-center gap-2 text-white font-courier font-semibold group-hover:gap-3 transition-all">
-                      Demander un devis
-                      <ArrowRightIcon size={18} className="group-hover:translate-x-1 transition-transform" />
+                  <h3 className="text-2xl font-stencil font-bold text-brand-primary mb-4">
+                    La ferme
+                  </h3>
+                  <p className="text-base font-courier text-neutral-dark leading-relaxed mb-6">
+                    Fruits, légumes, fromages, viandes... Tout ce qui pousse dans notre <span className="text-brand-primary font-semibold">ferme partenaire</span> arrive <span className="text-brand-primary font-semibold">frais</span> chez vous.
+                  </p>
+                  <div className="inline-flex items-center gap-2 text-brand-primary font-courier font-semibold group-hover:gap-3 transition-all">
+                    Découvrir
+                    <ArrowRightIcon size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              </ScrollReveal>
+
+              {/* Epicerie paysanne - Large */}
+              <ScrollReveal animation="fade-up" delay={200} className="lg:col-span-2">
+                <Link
+                  href="/marche-bocaux"
+                  className="group block bg-white rounded-3xl p-10 lg:p-12 shadow-lg hover:shadow-2xl transition-all duration-500 border border-neutral-light/20 hover:border-brand-primary/30 hover:-translate-y-2"
+                >
+                  <div className="flex flex-col lg:flex-row gap-8 items-start">
+                    <div className="w-16 h-16 bg-brand-primary/10 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all">
+                      <JarIcon size={32} className="text-brand-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-2xl lg:text-3xl font-stencil font-bold text-brand-primary mb-4">
+                        Epicerie paysanne
+                      </h3>
+                      <p className="text-base lg:text-lg font-courier text-neutral-dark leading-relaxed mb-6">
+                        Les Récoltants, c'est aussi une petite épicerie où vous retrouverez les produits de nos <span className="text-brand-primary font-semibold">fermes partenaires</span> et d'<span className="text-brand-primary font-semibold">artisans engagés</span> de la région.<br /><br />
+                        Le <span className="text-brand-primary font-semibold">terroir bio et local</span> à emporter chez vous.
+                      </p>
+                      <div className="inline-flex items-center gap-2 text-brand-primary font-courier font-semibold group-hover:gap-3 transition-all">
+                        En savoir plus
+                        <ArrowRightIcon size={18} className="group-hover:translate-x-1 transition-transform" />
+                      </div>
                     </div>
                   </div>
-                </div>
                 </Link>
+              </ScrollReveal>
+
+              {/* Traiteur */}
+              <ScrollReveal animation="fade-up" delay={300}>
+                <Link
+                  href="/traiteur-privatisation"
+                  className="group block bg-gradient-to-br from-neutral-dark to-neutral-medium text-white rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full"
+                >
+                  <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all">
+                    <ChefHatIcon size={32} className="text-white" />
+                  </div>
+                  <h3 className="text-2xl font-stencil font-bold text-brand-primary mb-4">
+                    Traiteur & Privatisation
+                  </h3>
+                  <p className="text-base font-courier text-white/90 leading-relaxed mb-6">
+                    Privatisez notre espace pour vos événements ou optez pour notre service traiteur.
+                  </p>
+                  <div className="inline-flex items-center gap-2 text-white font-courier font-semibold group-hover:gap-3 transition-all">
+                    Demander un devis
+                    <ArrowRightIcon size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </Link>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -546,93 +532,150 @@ export default function Home() {
           <div className="container mx-auto px-4 lg:px-8 relative z-10">
             {/* En-tête */}
             <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
-              <div className="inline-flex items-center gap-2 text-brand-primary text-sm font-courier font-semibold uppercase tracking-wider mb-6">
-                <StarIcon size={16} />
-                Ils nous font confiance
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-stencil font-bold text-neutral-dark mb-6 leading-tight">
-                Ce que nos{" "}
-                <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
-                  clients
-                </span>{" "}
-                pensent de nous
-              </h2>
-              <div className="flex items-center justify-center gap-2 text-2xl">
+              <ScrollReveal animation="fade-up">
+                <div className="inline-flex items-center gap-2 text-brand-primary text-sm font-courier font-semibold uppercase tracking-wider mb-6">
+                  <StarIcon size={16} />
+                  Ils nous font confiance
+                </div>
+              </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={100}>
+                <h2 className="text-4xl lg:text-5xl font-stencil font-bold text-neutral-dark mb-6 leading-tight">
+                  Ce que nos{" "}
+                  <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
+                    clients
+                  </span>{" "}
+                  pensent de nous
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={200}>
+                <div className="flex items-center justify-center gap-2 text-2xl">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <StarIcon key={star} size={28} className="text-brand-primary" />
                 ))}
-                <span className="ml-3 text-lg font-stencil font-bold text-neutral-dark">4.9/5</span>
-                <span className="text-sm font-courier text-neutral-dark">(127 avis)</span>
-              </div>
+                <a
+                  href="https://www.google.com/search?sca_esv=8c1d8b7610d1bcd4&rlz=1C5CHFA_enNL1119NL1119&q=Les%20R%C3%A9coltants%20Avis&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2NDQ2tDAyM7c0MzE0NDM0AuINjIyvGEV8UosVgg6vTM7PKUnMKylWcCzLLF7EilUYALS2PZ9IAAAA&rldimm=1131826796411612161&tbm=lcl&hl=fr-PT&sa=X&ved=0CAcQ5foLahcKEwj4z-iHh7aRAxUAAAAAHQAAAAAQBQ#lkt=LocalPoiReviews&arid=Ci9DQUlRQUNvZENodHljRjlvT21wZmJuZElkVUp1TURReGVDMXZSa2d6TVhWd0xWRRAB&lrd=0xd55272ca34adbfb:0xfb50e798361ec01,3,,,," 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-3 text-lg font-stencil font-bold text-neutral-dark hover:text-brand-primary transition-colors underline"
+                >
+                  4,8/5
+                </a>
+                <a
+                  href="https://www.google.com/search?sca_esv=8c1d8b7610d1bcd4&rlz=1C5CHFA_enNL1119NL1119&q=Les%20R%C3%A9coltants%20Avis&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxI2NDQ2tDAyM7c0MzE0NDM0AuINjIyvGEV8UosVgg6vTM7PKUnMKylWcCzLLF7EilUYALS2PZ9IAAAA&rldimm=1131826796411612161&tbm=lcl&hl=fr-PT&sa=X&ved=0CAcQ5foLahcKEwj4z-iHh7aRAxUAAAAAHQAAAAAQBQ#lkt=LocalPoiReviews&arid=Ci9DQUlRQUNvZENodHljRjlvT21wZmJuZElkVUp1TURReGVDMXZSa2d6TVhWd0xWRRAB&lrd=0xd55272ca34adbfb:0xfb50e798361ec01,3,,,," 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-courier text-neutral-dark hover:text-brand-primary transition-colors underline"
+                >
+                  (1 423 avis)
+                </a>
+                </div>
+              </ScrollReveal>
             </div>
 
             {/* Grid témoignages */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Témoignage 1 */}
-              <div className="bg-ceruse-light rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+            <RevealGroup className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Témoignage 1 - Laurence M */}
+              <div className="reveal-item bg-ceruse-light rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                 <div className="flex gap-1 mb-4">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <StarIcon key={star} size={18} className="text-brand-primary" />
                   ))}
                 </div>
                 <p className="font-courier text-neutral-dark leading-relaxed mb-6 italic">
-                  "On sent que les légumes ont poussé tranquillement. Ce goût authentique qu'on a perdu ailleurs...
-                  Ici, on le retrouve dans chaque bouchée. Un vrai coup de cœur !"
+                  "J'ai adoré cette table rue Sainte Colombe ! On a l'impression vu de l'extérieur que la salle est relativement petite, eh bien sachez que le restaurant est tout en longueur avec une autre salle très spacieuse au fond. J'ai choisi un dahl de graines de sarrasin + œuf parfait, accompagné d'un <span className="text-brand-primary font-semibold not-italic">jus maison</span> gingembre, pomme et carotte. Je me suis régalée ! La décoration est cosy et chaleureuse ! Je reviendrai volontiers."
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-brand-primary/20 rounded-full flex items-center justify-center">
-                    <span className="text-brand-primary font-stencil font-bold">MC</span>
+                    <span className="text-brand-primary font-stencil font-bold">LM</span>
                   </div>
                   <div>
-                    <p className="font-stencil font-bold text-neutral-dark">Marie C.</p>
-                    <p className="text-sm font-courier text-neutral-dark">Il y a 2 semaines</p>
+                    <p className="font-stencil font-bold text-neutral-dark">Laurence M.</p>
+                    <p className="text-sm font-courier text-neutral-dark">Avis Google</p>
                   </div>
                 </div>
               </div>
 
-              {/* Témoignage 2 */}
-              <div className="bg-ceruse-light rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+              {/* Témoignage 2 - Helma Ravenel */}
+              <div className="reveal-item bg-ceruse-light rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                 <div className="flex gap-1 mb-4">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <StarIcon key={star} size={18} className="text-brand-primary" />
                   ))}
                 </div>
                 <p className="font-courier text-neutral-dark leading-relaxed mb-6 italic">
-                  "Mes enfants ont enfin goûté des vraies tomates ! Ils ne voulaient plus partir.
-                  Merci de nous prouver qu'on peut bien manger local sans se ruiner."
+                  "Nous avons adoré notre expérience chez Les Récoltants. La cuisine est vraiment excellente, avec des produits <span className="text-brand-primary font-semibold not-italic">ultra-frais</span> qui viennent directement de leur <span className="text-brand-primary font-semibold not-italic">ferme</span> ou de <span className="text-brand-primary font-semibold not-italic">producteurs locaux</span>. Le personnel est chaleureux, attentif, et rend l'ambiance très agréable. Et surtout, le concept est génial : tout est pensé en <span className="text-brand-primary font-semibold not-italic">circuit court</span>, de la terre à l'assiette, avec une vraie démarche <span className="text-brand-primary font-semibold not-italic">éthique et responsable</span>. Une adresse aussi savoureuse que cohérente, à découvrir absolument à Bordeaux !"
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-brand-primary/20 rounded-full flex items-center justify-center">
-                    <span className="text-brand-primary font-stencil font-bold">JD</span>
+                    <span className="text-brand-primary font-stencil font-bold">HR</span>
                   </div>
                   <div>
-                    <p className="font-stencil font-bold text-neutral-dark">Jean D.</p>
-                    <p className="text-sm font-courier text-neutral-dark">Il y a 1 mois</p>
+                    <p className="font-stencil font-bold text-neutral-dark">Helma Ravenel</p>
+                    <p className="text-sm font-courier text-neutral-dark">Avis Google</p>
                   </div>
                 </div>
               </div>
 
-              {/* Témoignage 3 */}
-              <div className="bg-ceruse-light rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
+              {/* Témoignage 3 - Catherine */}
+              <div className="reveal-item bg-ceruse-light rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
                 <div className="flex gap-1 mb-4">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <StarIcon key={star} size={18} className="text-brand-primary" />
                   ))}
                 </div>
                 <p className="font-courier text-neutral-dark leading-relaxed mb-6 italic">
-                  "J'ai adoré parler avec le chef qui connaît personnellement le producteur.
-                  Cette transparence totale, c'est exactement ce que je cherchais. On reviendra !"
+                  "Quel plaisir de pouvoir attribuer une note excellente à un restaurant qui le mérite vraiment ! Nous avons adoré cette <span className="text-brand-primary font-semibold not-italic">expérience en famille</span> : de l'<span className="text-brand-primary font-semibold not-italic">accueil chaleureux</span> à la qualité des plats, sans oublier le cadre particulièrement agréable. La <span className="text-brand-primary font-semibold not-italic">cuisine ouverte</span> apporte également une touche originale et conviviale à l'ensemble. Merci à tous de André, Catherine, Baptiste, Clémence et Bonne-Mamie Colette, 97 ans s'il vous plaît. À bientôt !"
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-brand-primary/20 rounded-full flex items-center justify-center">
-                    <span className="text-brand-primary font-stencil font-bold">SL</span>
+                    <span className="text-brand-primary font-stencil font-bold">C</span>
                   </div>
                   <div>
-                    <p className="font-stencil font-bold text-neutral-dark">Sophie L.</p>
-                    <p className="text-sm font-courier text-neutral-dark">Il y a 3 semaines</p>
+                    <p className="font-stencil font-bold text-neutral-dark">Catherine</p>
+                    <p className="text-sm font-courier text-neutral-dark">Avis Google</p>
                   </div>
                 </div>
               </div>
+            </RevealGroup>
+          </div>
+        </section>
+
+        {/* ==================== BON CADEAU ==================== */}
+        <section id="bon-cadeau-section" className="py-20 lg:py-28 texture-terracotta-cmyk-image relative overflow-hidden">
+          {/* Décoration */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+
+          <div className="container mx-auto px-4 lg:px-8 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <ScrollReveal animation="fade-up">
+                <div className="inline-flex items-center gap-2 text-white/80 text-sm font-courier font-semibold uppercase tracking-wider mb-6">
+                  <HeartIcon size={16} />
+                  Offrir une expérience
+                </div>
+              </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={100}>
+                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-stencil font-bold text-white mb-6 leading-tight">
+                  Bon cadeau
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal animation="fade-up" delay={200}>
+                <p className="text-xl lg:text-2xl font-courier text-white/90 leading-relaxed mb-10">
+                  Faites découvrir les Récoltants à ceux que vous aimez
+                </p>
+              </ScrollReveal>
+              <ScrollReveal animation="scale" delay={300}>
+                <a
+                  href="https://www.kadoresto.fr/restaurant/d07f/offrir-bon-cadeau-restaurant-les-recoltants/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center justify-center gap-3 bg-white text-brand-primary px-10 py-5 font-courier font-bold hover:bg-ceruse-light transition-all shadow-2xl hover:scale-105"
+                >
+                  <HeartIcon size={20} />
+                  Offrir un bon cadeau
+                  <ArrowRightIcon size={18} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+              </ScrollReveal>
             </div>
           </div>
         </section>

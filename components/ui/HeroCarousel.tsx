@@ -10,7 +10,7 @@ interface HeroCarouselProps {
   images: string[];
   title: string;
   highlightWord?: string;
-  description: string;
+  description: ReactNode;
   badge?: {
     icon?: ReactNode;
     text: string;
@@ -26,6 +26,12 @@ interface HeroCarouselProps {
       href: string;
     };
   };
+  stats?: {
+    value: string;
+    label: string;
+    sublabel: string;
+  }[];
+  lastImageZoomOut?: boolean;
 }
 
 export default function HeroCarousel({
@@ -35,6 +41,8 @@ export default function HeroCarousel({
   description,
   badge,
   cta,
+  stats,
+  lastImageZoomOut = false,
 }: HeroCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -75,9 +83,9 @@ export default function HeroCarousel({
               alt={`${title} - Image ${index + 1}`}
               fill
               priority={index === 0}
-              quality={90}
+              quality={100}
               sizes="100vw"
-              className="object-cover"
+              className={lastImageZoomOut && index === images.length - 1 ? "object-contain" : "object-cover"}
               style={{ objectPosition: "center" }}
             />
           </div>
@@ -127,7 +135,7 @@ export default function HeroCarousel({
         </button>
 
         {/* Dots indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+        <div className={`absolute left-1/2 -translate-x-1/2 flex gap-2 z-20 ${stats ? "bottom-32 lg:bottom-36" : "bottom-8"}`}>
           {images.map((_, index) => (
             <button
               key={index}
@@ -141,6 +149,29 @@ export default function HeroCarousel({
             />
           ))}
         </div>
+
+        {/* Stats overlay at bottom */}
+        {stats && (
+          <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-black/80 via-black/50 to-transparent pt-16 pb-8">
+            <div className="container mx-auto px-4 lg:px-8">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 max-w-5xl mx-auto">
+                {stats.map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-3xl lg:text-5xl font-stencil font-bold text-brand-primary mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="font-courier font-bold text-white text-sm lg:text-base mb-0.5">
+                      {stat.label}
+                    </div>
+                    <div className="text-xs lg:text-sm font-courier text-white/60">
+                      {stat.sublabel}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Content on top */}

@@ -65,9 +65,6 @@ export default function ContactForm() {
       {/* Nom & Prénom */}
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="firstName" className="block text-sm font-medium text-neutral-dark mb-2">
-            Prénom *
-          </label>
           <input
             type="text"
             id="firstName"
@@ -75,14 +72,11 @@ export default function ContactForm() {
             value={formData.firstName}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
+            className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all font-courier"
             placeholder="Jean"
           />
         </div>
         <div>
-          <label htmlFor="lastName" className="block text-sm font-medium text-neutral-dark mb-2">
-            Nom *
-          </label>
           <input
             type="text"
             id="lastName"
@@ -90,7 +84,7 @@ export default function ContactForm() {
             value={formData.lastName}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
+            className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all font-courier"
             placeholder="Dupont"
           />
         </div>
@@ -99,9 +93,6 @@ export default function ContactForm() {
       {/* Email & Téléphone */}
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-neutral-dark mb-2">
-            Email *
-          </label>
           <input
             type="email"
             id="email"
@@ -109,14 +100,11 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
+            className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all font-courier"
             placeholder="jean.dupont@email.com"
           />
         </div>
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-neutral-dark mb-2">
-            Téléphone *
-          </label>
           <input
             type="tel"
             id="phone"
@@ -124,7 +112,7 @@ export default function ContactForm() {
             value={formData.phone}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
+            className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all font-courier"
             placeholder="06 12 34 56 78"
           />
         </div>
@@ -132,16 +120,13 @@ export default function ContactForm() {
 
       {/* Sujet */}
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-neutral-dark mb-2">
-          Sujet de votre demande *
-        </label>
         <select
           id="subject"
           name="subject"
           value={formData.subject}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all bg-white"
+          className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all bg-white font-courier"
         >
           <option value="reservation">Réservation restaurant</option>
           <option value="traiteur">Service traiteur</option>
@@ -164,7 +149,7 @@ export default function ContactForm() {
               name="eventDate"
               value={formData.eventDate}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all font-courier"
             />
           </div>
           <div>
@@ -178,7 +163,7 @@ export default function ContactForm() {
               value={formData.guestCount}
               onChange={handleChange}
               min="1"
-              className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all"
+              className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all font-courier"
               placeholder="20"
             />
           </div>
@@ -187,9 +172,6 @@ export default function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-neutral-dark mb-2">
-          Votre message *
-        </label>
         <textarea
           id="message"
           name="message"
@@ -197,7 +179,7 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={6}
-          className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all resize-none"
+          className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all resize-none font-courier"
           placeholder="Parlez-nous de votre projet..."
         />
       </div>

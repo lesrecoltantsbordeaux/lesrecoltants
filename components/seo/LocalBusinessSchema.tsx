@@ -44,15 +44,33 @@ export default function LocalBusinessSchema() {
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        dayOfWeek: ["Monday", "Tuesday"],
         opens: "12:00",
         closes: "14:00",
       },
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        dayOfWeek: ["Wednesday", "Thursday", "Friday"],
+        opens: "12:00",
+        closes: "14:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Wednesday", "Thursday", "Friday"],
         opens: "19:00",
-        closes: "22:00",
+        closes: "21:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Saturday"],
+        opens: "10:00",
+        closes: "14:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Saturday"],
+        opens: "19:00",
+        closes: "21:00",
       },
     ],
 
@@ -86,13 +104,13 @@ export default function LocalBusinessSchema() {
       },
       {
         "@type": "PropertyValue",
-        name: "Circuit Court",
+        name: "Direct Producteurs",
         value: "Producteurs locaux",
       },
       {
         "@type": "PropertyValue",
-        name: "Zéro Déchet",
-        value: "Engagement complet",
+        name: "La ferme des Récoltants",
+        value: "Agriculture bio propre",
       },
     ],
 

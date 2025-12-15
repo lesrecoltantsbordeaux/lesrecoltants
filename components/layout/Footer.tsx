@@ -34,26 +34,17 @@ export default function Footer() {
             </Link>
 
             <p className="font-courier text-white/60 text-sm leading-relaxed max-w-xs">
-              De la fourche à la fourchette. Restaurant bistronomique & marché fermier bio à Bordeaux.
+              <span className="text-brand-primary font-semibold">De la fourche à la fourchette.</span> Restaurant bistronomique & marché fermier <span className="text-brand-primary font-semibold">bio</span> à Bordeaux.
             </p>
-
-            <div className="flex flex-wrap gap-2">
-              <span className="text-xs font-courier bg-white/5 border border-white/10 px-3 py-1.5 text-white/70">
-                100% Bio
-              </span>
-              <span className="text-xs font-courier bg-white/5 border border-white/10 px-3 py-1.5 text-white/70">
-                &lt;50km
-              </span>
-            </div>
           </div>
 
           {/* Colonne 2: Navigation */}
           <div>
-            <h3 className="font-stencil text-white text-sm font-bold mb-6 uppercase tracking-wider">Navigation</h3>
+            <h3 className="font-stencil text-brand-primary text-sm font-bold mb-6 uppercase tracking-wider">Navigation</h3>
             <ul className="space-y-3">
               {[
                 { href: "/", label: "Accueil" },
-                { href: "/restaurant", label: "Restaurant" },
+                { href: "/restaurant", label: "Le Restaurant" },
                   { href: "/la-ferme", label: "La Ferme" },
                 { href: "/traiteur-privatisation", label: "Traiteur" },
                 { href: "/contact", label: "Contact" },
@@ -72,25 +63,29 @@ export default function Footer() {
 
           {/* Colonne 3: Horaires */}
           <div>
-            <h3 className="font-stencil text-white text-sm font-bold mb-6 uppercase tracking-wider">Horaires</h3>
+            <h3 className="font-stencil text-brand-primary text-sm font-bold mb-6 uppercase tracking-wider">Horaires</h3>
             <div className="space-y-3 font-courier text-sm">
               <div>
                 <p className="text-white/80 font-medium">Lundi & Mardi</p>
-                <p className="text-white/50 text-xs">12h - 19h</p>
+                <p className="text-white/50 text-xs">12h - 14h</p>
               </div>
               <div>
-                <p className="text-white/80 font-medium">Jeudi - Samedi</p>
-                <p className="text-white/50 text-xs">12h - 22h30</p>
+                <p className="text-white/80 font-medium">Mercredi - Vendredi</p>
+                <p className="text-white/50 text-xs">12h - 14h • 19h - 21h</p>
+              </div>
+              <div>
+                <p className="text-white/80 font-medium">Samedi</p>
+                <p className="text-white/50 text-xs">10h - 14h • 19h - 21h</p>
               </div>
               <div className="pt-2">
-                <p className="text-white/40 text-xs">Fermé mercredi & dimanche</p>
+                <p className="text-white/40 text-xs">Fermé dimanche</p>
               </div>
             </div>
           </div>
 
           {/* Colonne 4: Contact */}
           <div>
-            <h3 className="font-stencil text-white text-sm font-bold mb-6 uppercase tracking-wider">Contact</h3>
+            <h3 className="font-stencil text-brand-primary text-sm font-bold mb-6 uppercase tracking-wider">Contact</h3>
             <div className="space-y-4">
               {siteConfig.business.telephone && (
                 <a
@@ -151,7 +146,7 @@ export default function Footer() {
 
             {/* Propul'SEO */}
             <div className="text-white/40">
-              Créé par{" "}
+              Fait avec Passion par{" "}
               <a
                 href="https://propulseo-site.com"
                 target="_blank"

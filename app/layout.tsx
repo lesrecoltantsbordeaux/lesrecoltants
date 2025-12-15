@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { defaultMetadata } from "@/lib/seo/config";
 import { getRestaurantStructuredData, getOrganizationStructuredData } from "@/lib/seo/structured-data";
+import CookieBanner from "@/components/ui/CookieBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,6 +85,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           {children}
         </div>
+        <CookieBanner />
       </body>
     </html>
   );
