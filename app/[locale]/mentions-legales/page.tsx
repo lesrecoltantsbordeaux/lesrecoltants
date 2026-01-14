@@ -1,5 +1,3 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -11,9 +9,7 @@ export const metadata: Metadata = {
 
 export default function MentionsLegales() {
   return (
-    <>
-      <Header />
-      <main className="flex-1 bg-white">
+    <div className="flex-1 bg-white">
         {/* Hero */}
         <section className="pt-32 pb-16 lg:pt-40 lg:pb-20 bg-ceruse-light">
           <div className="container mx-auto px-6 lg:px-8">
@@ -22,7 +18,7 @@ export default function MentionsLegales() {
                 Mentions légales
               </h1>
               <p className="text-lg font-courier text-neutral-medium">
-                Conformément aux dispositions des articles 6-III et 19 de la loi pour la Confiance dans l'Économie Numérique (LCEN).
+                Conformément aux dispositions des articles 6-III et 19 de la loi pour la Confiance dans l&apos;Économie Numérique (LCEN).
               </p>
             </div>
           </div>
@@ -97,10 +93,10 @@ export default function MentionsLegales() {
               {/* Conditions d'utilisation */}
               <div>
                 <h2 className="text-2xl font-stencil font-bold text-brand-primary mb-4">
-                  Conditions d'utilisation
+                  Conditions d&apos;utilisation
                 </h2>
                 <div className="font-courier text-neutral-dark space-y-4 leading-relaxed">
-                  <p>L'utilisation du site implique l'acceptation pleine et entière des conditions générales d'utilisation décrites ci-après.</p>
+                  <p>L&apos;utilisation du site implique l&apos;acceptation pleine et entière des conditions générales d&apos;utilisation décrites ci-après.</p>
                   <p>Les présentes mentions légales peuvent être modifiées ou complétées à tout moment, sans préavis.</p>
                 </div>
               </div>
@@ -112,8 +108,8 @@ export default function MentionsLegales() {
                 </h2>
                 <div className="font-courier text-neutral-dark space-y-4 leading-relaxed">
                   <p>Les informations diffusées sur ce site sont fournies à titre indicatif.</p>
-                  <p>Le propriétaire du site s'efforce d'assurer l'exactitude et la mise à jour des informations publiées, mais ne saurait être tenu responsable d'erreurs, d'omissions ou d'une indisponibilité temporaire des contenus.</p>
-                  <p>Le propriétaire du site ne peut être tenu responsable des dommages directs ou indirects résultant de l'accès ou de l'utilisation du site.</p>
+                  <p>Le propriétaire du site s&apos;efforce d&apos;assurer l&apos;exactitude et la mise à jour des informations publiées, mais ne saurait être tenu responsable d&apos;erreurs, d&apos;omissions ou d&apos;une indisponibilité temporaire des contenus.</p>
+                  <p>Le propriétaire du site ne peut être tenu responsable des dommages directs ou indirects résultant de l&apos;accès ou de l&apos;utilisation du site.</p>
                 </div>
               </div>
 
@@ -124,7 +120,7 @@ export default function MentionsLegales() {
                 </h2>
                 <div className="font-courier text-neutral-dark space-y-4 leading-relaxed">
                   <p>Les utilisateurs peuvent être amenés à déposer du contenu (formulaire, commentaires, avis). Ils en restent seuls responsables sur le plan juridique.</p>
-                  <p>Le propriétaire du site se réserve le droit de supprimer, sans préavis, tout contenu contrevenant à la législation en vigueur ou portant atteinte à l'image du site.</p>
+                  <p>Le propriétaire du site se réserve le droit de supprimer, sans préavis, tout contenu contrevenant à la législation en vigueur ou portant atteinte à l&apos;image du site.</p>
                 </div>
               </div>
 
@@ -134,9 +130,9 @@ export default function MentionsLegales() {
                   Propriété intellectuelle
                 </h2>
                 <div className="font-courier text-neutral-dark space-y-4 leading-relaxed">
-                  <p>L'ensemble des éléments du site (textes, images, graphismes, logo, vidéos, icônes, sons, logiciels, etc.) est protégé par le droit de la propriété intellectuelle.</p>
+                  <p>L&apos;ensemble des éléments du site (textes, images, graphismes, logo, vidéos, icônes, sons, logiciels, etc.) est protégé par le droit de la propriété intellectuelle.</p>
                   <p>Toute reproduction, représentation, modification ou adaptation, totale ou partielle, de ces éléments est interdite sans autorisation écrite préalable du propriétaire.</p>
-                  <p>Toute exploitation non autorisée du site ou de l'un de ses éléments constitue une contrefaçon pouvant engager la responsabilité civile et pénale de son auteur.</p>
+                  <p>Toute exploitation non autorisée du site ou de l&apos;un de ses éléments constitue une contrefaçon pouvant engager la responsabilité civile et pénale de son auteur.</p>
                 </div>
               </div>
 
@@ -152,7 +148,7 @@ export default function MentionsLegales() {
                   </div>
                   <div>
                     <h3 className="font-bold text-neutral-dark mb-2">Liens entrants</h3>
-                    <p>Les liens vers le site Les Récoltants sont autorisés, sous réserve qu'ils n'altèrent pas son image et qu'ils ouvrent dans une nouvelle fenêtre. Le propriétaire se réserve le droit de demander la suppression de tout lien qu'il jugerait non conforme.</p>
+                    <p>Les liens vers le site Les Récoltants sont autorisés, sous réserve qu&apos;ils n&apos;altèrent pas son image et qu&apos;ils ouvrent dans une nouvelle fenêtre. Le propriétaire se réserve le droit de demander la suppression de tout lien qu&apos;il jugerait non conforme.</p>
                   </div>
                 </div>
               </div>
@@ -163,10 +159,10 @@ export default function MentionsLegales() {
                   Données personnelles et confidentialité
                 </h2>
                 <div className="font-courier text-neutral-dark space-y-4 leading-relaxed">
-                  <p>Conformément au Règlement Général sur la Protection des Données (RGPD), tout utilisateur dispose d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles le concernant.</p>
-                  <p>Toute demande peut être adressée par écrit à l'adresse email indiquée ci-dessus, accompagnée d'un justificatif d'identité.</p>
+                  <p>Conformément au Règlement Général sur la Protection des Données (RGPD), tout utilisateur dispose d&apos;un droit d&apos;accès, de rectification, de suppression et d&apos;opposition aux données personnelles le concernant.</p>
+                  <p>Toute demande peut être adressée par écrit à l&apos;adresse email indiquée ci-dessus, accompagnée d&apos;un justificatif d&apos;identité.</p>
                   <p>
-                    Pour plus d'informations, l'utilisateur est invité à consulter la page{" "}
+                    Pour plus d&apos;informations, l&apos;utilisateur est invité à consulter la page{" "}
                     <Link href="/politique-confidentialite" className="text-brand-primary hover:underline">
                       Politique de confidentialité
                     </Link>.
@@ -177,8 +173,6 @@ export default function MentionsLegales() {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
-    </>
+    </div>
   );
 }

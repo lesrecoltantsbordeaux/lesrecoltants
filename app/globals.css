@@ -29,6 +29,21 @@ img {
   content-visibility: auto;
 }
 
+/* Image loading placeholder */
+img[loading="lazy"] {
+  background: linear-gradient(110deg, #f8f6f3 8%, #ebe8e3 18%, #f8f6f3 33%);
+  background-size: 200% 100%;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Force header to always stay visible */
 header {
   position: fixed !important;

@@ -1,0 +1,422 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "restaurant": "Le Restaurant",
+    "farm": "La Ferme",
+    "privatisation": "Groupe & Privatisation",
+    "contact": "Contact"
+  },
+  "common": {
+    "reserve": "Réserver",
+    "reserveTable": "Réserver une table",
+    "callNow": "Appeler maintenant",
+    "sendMessage": "Envoyer un message",
+    "learnMore": "En savoir plus",
+    "discover": "Découvrir",
+    "backToHome": "Retour à l'accueil",
+    "changeLanguage": "Changer de langue",
+    "menu": "Menu",
+    "googleReview": "Avis Google",
+    "reviews": "avis"
+  },
+  "footer": {
+    "tagline": "De la fourche à la fourchette",
+    "description": "Restaurant bistronomique & marché fermier bio à Bordeaux.",
+    "navigation": "Navigation",
+    "hours": "Horaires",
+    "contact": "Contact",
+    "mondayTuesday": "Lundi & Mardi",
+    "wednesdaySaturday": "Mercredi - Samedi",
+    "closedSunday": "Fermé dimanche",
+    "lunchHours": "12h - 14h",
+    "dinnerHours": "19h - 21h",
+    "allRightsReserved": "Tous droits réservés",
+    "madeWithPassion": "Fait avec Passion par",
+    "legalNotice": "Mentions légales",
+    "privacy": "Confidentialité"
+  },
+  "cookies": {
+    "message": "Ce site utilise des cookies pour vous offrir la meilleure expérience possible.",
+    "accept": "Accepter",
+    "decline": "Refuser"
+  },
+  "home": {
+    "pageLabel": "PAGE 01 — ACCUEIL",
+    "heroSubtitle": "Restaurant bistronomique",
+    "heroTitle1": "Du champ",
+    "heroTitle2": "à votre",
+    "heroTitle3": "assiette",
+    "heroDescription": "Un restaurant bistronomique à Bordeaux, où nous avons choisi de cuisiner les produits des fermes bio voisines. Le meilleur du terroir local, des liens forts, une cuisine qui respecte l'essentiel.",
+    "stats": {
+      "organic": {
+        "value": "100%",
+        "label": "Agriculture paysanne",
+        "sublabel": "Bio & régénératrice"
+      },
+      "local": {
+        "value": ">200km",
+        "label": "Circuit court",
+        "sublabel": "Direct producteurs"
+      },
+      "pesticide": {
+        "value": "0",
+        "label": "Pesticide",
+        "sublabel": "Sol vivant"
+      },
+      "seasonal": {
+        "value": "100%",
+        "label": "De saison",
+        "sublabel": "Fraîcheur garantie"
+      }
+    },
+    "values": {
+      "sectionLabel": "Nos engagements",
+      "title": "Une cuisine qui a du",
+      "titleHighlight": "sens",
+      "description1": "Le message est simple : <strong>défendre coûte que coûte le terroir</strong>, respecter le <strong>vivant</strong> et se fournir exclusivement auprès de <strong>producteurs</strong> et <strong>artisans locaux</strong>.",
+      "description2": "Parce qu'il est possible de proposer une cuisine gourmande ET <strong>ultra locale</strong>.",
+      "card1": {
+        "title": "Zéro compromis",
+        "description": "Des produits bruts cultivés en <strong>agriculture bio</strong>, paysanne, dans le respect d'un <strong>sol vivant</strong>, sans pesticides…"
+      },
+      "card2": {
+        "title": "Direct Producteurs",
+        "description": "Des <strong>fermes voisines</strong> qui nous livrent en <strong>direct</strong>, de 20km à 150km au plus loin. C'est ça le vrai goût : <strong>frais</strong>, simple, immédiat."
+      },
+      "card3": {
+        "title": "La ferme des Récoltants",
+        "description": "Nous faisons pousser nos légumes en <strong>agriculture bio</strong>, dans notre propre <strong>champ à 20km</strong> d'ici. Rien de plus vrai, rien de plus simple."
+      },
+      "card4": {
+        "title": "Équité",
+        "description": "Un <strong>prix juste</strong> pour le producteur, un tarif honnête pour vous, et des conditions dignes pour toute l'équipe. L'<strong>équité</strong> à tous les niveaux."
+      }
+    },
+    "charter": {
+      "title": "LA CHARTE DES RÉCOLTANTS",
+      "items": [
+        "Un produit qui a du <strong>GOÛT</strong>",
+        "Notre potager bio directement dans votre assiette",
+        "De l'agriculture bio, paysanne et durable sur sol <strong>VIVANT</strong> !",
+        "La <strong>SAISONNALITÉ</strong> 100% respectée",
+        "Plein phare sur le terroir et les ressources locales",
+        "Modes d'élevages durables et <strong>RESPECTUEUX</strong> du vivant",
+        "Sauvegarde du savoir-faire artisanal",
+        "<strong>TRANSPARENCE</strong> à tous les étages",
+        "Un prix juste pour le consommateur et le producteur"
+      ]
+    },
+    "ecosystem": {
+      "sectionLabel": "Notre univers",
+      "title1": "Un écosystème vertueux",
+      "title2": "autour du",
+      "titleHighlight": "local",
+      "description1": "Chez les Récoltants, tout repose sur un <strong>cercle vertueux</strong> qui relie la ferme, la cuisine et la terre.",
+      "description2": "Nos légumes poussent dans des <strong>sols vivants</strong>, à deux pas d'ici. Nous les cuisinons dans leur intégralité, sans gâchis. Et ce qui reste retourne nourrir le sol grâce à notre <strong>compost</strong>.",
+      "description3": "Du champ à l'assiette, puis de l'assiette à la terre : c'est notre manière de prendre soin du goût, des <strong>producteurs</strong> et du territoire."
+    },
+    "testimonials": {
+      "sectionLabel": "Ils nous font confiance",
+      "title": "Ce que nos",
+      "titleHighlight": "clients",
+      "title2": "pensent de nous"
+    },
+    "giftCard": {
+      "sectionLabel": "Offrir une expérience",
+      "title": "Bon cadeau",
+      "description": "Faites découvrir le restaurant à ceux que vous aimez",
+      "cta": "Offrir un bon cadeau"
+    }
+  },
+  "farm": {
+    "hero": {
+      "title": "La",
+      "titleHighlight": "ferme",
+      "description": "A <span class=\"text-brand-primary font-semibold\">20km de Bordeaux</span>, le <span class=\"text-brand-primary font-semibold\">potager bio</span> des Récoltants. Là où les <span class=\"text-brand-primary font-semibold\">légumes</span> attendent patiemment le moment idéal pour leur <span class=\"text-brand-primary font-semibold\">récolte</span>.<br /><br />De la main du <span class=\"text-brand-primary font-semibold\">jardinier</span> à celle du <span class=\"text-brand-primary font-semibold\">cuisinier</span>, on crée le <span class=\"text-brand-primary font-semibold\">menu</span> qui souligne les <span class=\"text-brand-primary font-semibold\">goûts</span> de la <span class=\"text-brand-primary font-semibold\">nature</span>.",
+      "badge": "100% Bio & Local",
+      "cta": "Découvrir nos produits",
+      "stats": {
+        "bio": { "value": "100%", "label": "Bio & Local", "sublabel": "Certifié AB" },
+        "local": { "value": "<50km", "label": "Circuit court", "sublabel": "Ferme partenaire" },
+        "pesticide": { "value": "0", "label": "Pesticide", "sublabel": "Sol vivant" },
+        "seasonal": { "value": "100%", "label": "De saison", "sublabel": "Fraîcheur garantie" }
+      }
+    },
+    "story": {
+      "location": "Tabanac — Entre-deux-Mers — 20 km de Bordeaux",
+      "mainTitle": "Notre ferme est située sur un terroir argileux riche qui donne toute sa force à nos légumes.",
+      "section1": {
+        "number": "01",
+        "title": "À la ferme",
+        "intro": "Nos pratiques s'inspirent de <strong class=\"text-brand-primary\">l'agroécologie</strong> et du respect du vivant.",
+        "description": "François, maraîcher paysan, travaille avec la nature, pas contre elle : <span class=\"text-brand-primary font-semibold\">sols vivants</span>, rotations de cultures, <span class=\"text-brand-primary font-semibold\">semences paysannes</span>, préservation de la <span class=\"text-brand-primary font-semibold\">biodiversité</span>… Chaque geste vise à nourrir la terre autant que nos assiettes, pour une <span class=\"text-brand-primary font-semibold\">agriculture durable</span> et profondément respectueuse du vivant."
+      },
+      "section2": {
+        "number": "02",
+        "title": "Le terroir",
+        "intro": "Ici, la terre est <strong class=\"text-brand-primary\">argilo-limoneuse</strong>. Elle retient naturellement l'eau et conserve les minéraux.",
+        "description": "Ce terroir, généreux par nature, résiste mieux aux sécheresses et soutient pleinement notre démarche : cultiver de façon <span class=\"text-brand-primary font-semibold\">100 % naturelle</span>, en respectant les <span class=\"text-brand-primary font-semibold\">sols</span> et en travaillant avec ce qu'ils ont de plus précieux."
+      },
+      "section3": {
+        "number": "03",
+        "title": "Les légumes",
+        "intro": "<strong class=\"text-brand-primary\">Une soixantaine de variétés</strong> sont cultivés tout au long de l'année, en privilégiant des <span class=\"text-brand-primary font-semibold\">variétés anciennes</span>.",
+        "description": "Cette <span class=\"text-brand-primary font-semibold\">diversité naturelle</span> nous permet de préserver des <span class=\"text-brand-primary font-semibold\">goûts authentiques</span> et riches, loin des standards uniformisés."
+      }
+    },
+    "mosaic": {
+      "sectionLabel": "Notre univers",
+      "title": "Un écosystème",
+      "titleHighlight": "vivant",
+      "labels": {
+        "farm": "Notre ferme",
+        "exceptional": "Un terroir d'exception",
+        "vegetables": "Légumes bio",
+        "garden": "Le potager",
+        "harvest": "La récolte",
+        "terroir": "Terroir",
+        "team": "L'équipe"
+      }
+    },
+    "producers": {
+      "sectionLabel": "Nos producteurs",
+      "title": "Valoriser le travail des producteurs",
+      "titleHighlight": "&",
+      "title2": "respecter le vivant",
+      "relationTitle": "Une relation directe & humaine",
+      "relationDescription": "Nous entretenons une relation directe et étroite avec l'ensemble des producteurs et artisans avec lesquels nous travaillons : nous les connaissons personnellement, échangeons avec eux chaque semaine, comprenons leurs pratiques agricoles et mettons leur savoir-faire au cœur de notre cuisine.",
+      "tags": {
+        "shortCircuit": "Circuits courts",
+        "directRelation": "Relation directe",
+        "craftsmanship": "Savoir-faire artisanal"
+      },
+      "pillar1": {
+        "number": "01",
+        "title": "Une rémunération juste",
+        "description": "Il est essentiel pour nous que les producteurs avec lesquels nous travaillons soient rémunérés de manière juste et durable. Nous veillons à ce que le prix des produits soit équilibré et cohérent pour chacun : producteurs, clients et restaurant.",
+        "points": [
+          "Négociation directe sans intermédiaire",
+          "Prix fixés en concertation avec le producteur",
+          "Engagement sur la durée pour une stabilité économique"
+        ],
+        "label": "Prix équitable"
+      },
+      "pillar2": {
+        "number": "02",
+        "title": "Agriculture paysanne & locale",
+        "description": "Nous défendons une vision exigeante de l'agriculture, paysanne, locale et humaine, respectueuse de l'environnement, du vivant et des savoir-faire traditionnels."
+      },
+      "pillar3": {
+        "number": "03",
+        "title": "Races & variétés anciennes",
+        "description": "Vaches limousines, porcs gascon, chèvres des Pyrénées… Nous œuvrons pour la valorisation de races animales locales et de variétés anciennes menacées par l'uniformisation."
+      }
+    },
+    "charter": {
+      "title": "LA CHARTE DES RÉCOLTANTS",
+      "items": [
+        "Un produit qui a du <strong>GOÛT</strong>",
+        "Notre potager bio directement dans votre assiette",
+        "De l'agriculture bio, paysanne et durable sur sol <strong>VIVANT</strong> !",
+        "La <strong>SAISONNALITÉ</strong> 100% respectée",
+        "Plein phare sur le terroir et les ressources locales",
+        "Modes d'élevages durables et <strong>RESPECTUEUX</strong> du vivant",
+        "Sauvegarde du savoir-faire artisanal",
+        "<strong>TRANSPARENCE</strong> à tous les étages",
+        "Un prix juste pour le consommateur et le producteur"
+      ]
+    }
+  },
+  "restaurant": {
+    "hero": {
+      "title": "Une cuisine qui célèbre le",
+      "titleHighlight": "terroir",
+      "description": "Notre carte évolue au rythme des <span class=\"text-brand-primary font-semibold\">récoltes</span> et des <span class=\"text-brand-primary font-semibold\">saisons</span>. Chaque plat met en lumière un <span class=\"text-brand-primary font-semibold\">producteur</span>, un savoir-faire, une histoire.",
+      "badge": "Cuisine d'auteur – produits bruts du terroir"
+    },
+    "philosophy": {
+      "sectionLabel": "Notre philosophie",
+      "title": "Dans l'",
+      "titleHighlight": "assiette",
+      "paragraph1": "Chez les Récoltants, nous avons fait le choix de <em class=\"not-italic font-semibold text-brand-primary-dark\">ne pas figer notre carte</em>. Le cœur de notre projet est de nous adapter aux récoltes, saison après saison et aux produits disponibles sur le moment chez nos producteurs partenaires et dans notre champs. Chaque jour, notre cuisine entièrement maison se réinvente en fonction des arrivages, pour proposer une carte fraîche, vivante et sincère.",
+      "commitmentLabel": "Notre engagement",
+      "paragraph2": "Notre cuisine défend l'<span class=\"font-bold underline decoration-2 underline-offset-4 decoration-white/60\">agriculture paysanne locale</span>. Simple et sincère mais pas simpliste, elle est guidée par la qualité des produits que nous travaillons. Ici, tout est <span class=\"font-bold underline decoration-2 underline-offset-4 decoration-white/60\">local</span>, sans intermédiaires entre votre assiette et le champ.",
+      "quote": "Du champ à l'assiette, sans détour"
+    },
+    "gallery": {
+      "sectionLabel": "Instantanés",
+      "title": "L'art de la",
+      "titleHighlight": "table",
+      "labels": {
+        "creative": "Cuisine créative",
+        "local": "Produits locaux",
+        "knowHow": "Savoir-faire",
+        "behindScenes": "En coulisses",
+        "atmosphere": "Atmosphère"
+      },
+      "quote": "Chaque plat raconte l'histoire d'un producteur, d'un terroir, d'une saison"
+    },
+    "giftCard": {
+      "sectionLabel": "Offrir une expérience",
+      "title": "Bon cadeau",
+      "description": "Faites découvrir le restaurant à ceux que vous aimez",
+      "cta": "Offrir un bon cadeau"
+    },
+    "info": {
+      "sectionLabel": "Informations pratiques",
+      "title": "Tout ce qu'il faut",
+      "titleHighlight": "savoir",
+      "hours": {
+        "title": "Horaires",
+        "mondayTuesday": "Lundi & Mardi",
+        "mondayTuesdayHours": "12h00 - 14h00",
+        "wednesdaySaturday": "Mercredi - Samedi",
+        "wednesdaySaturdayHours": "12h00 - 14h00 • 19h00 - 21h00",
+        "sunday": "Dimanche",
+        "closed": "Fermé"
+      },
+      "goodToKnow": {
+        "title": "Bon à savoir",
+        "reservation": "Réservation fortement conseillée",
+        "vegetarian": "Menu <span class=\"text-brand-primary font-semibold\">végétarien</span> tous les jours",
+        "allergies": "Adaptations possibles pour <span class=\"text-brand-primary font-semibold\">allergies et intolérances</span>",
+        "children": "Plat enfant en portion réduite",
+        "payment": "Carte bancaire, Amex, la GEMME et espèces acceptées",
+        "accessibility": "Accès PMR"
+      },
+      "menu": {
+        "title": "Menu",
+        "weekdays": "Du lundi au vendredi",
+        "starterMain": "Entrée - Plat ou Plat - Dessert",
+        "fullMenu": "Entrée - Plat - Dessert",
+        "mainOnly": "Plat seul",
+        "alaCarte": "À la carte, le soir et week-end"
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Parlons de votre",
+      "titleHighlight": "projet",
+      "description": "Une <span class=\"text-brand-primary font-semibold\">réservation</span>, une question, un <span class=\"text-brand-primary font-semibold\">événement</span> à organiser ? Nous sommes à votre écoute et vous répondons sous 24h.",
+      "badge": "Réponse sous 24h · Devis gratuit",
+      "ctaPrimary": "Appeler maintenant",
+      "ctaSecondary": "Envoyer un message"
+    },
+    "coordinates": {
+      "title": "Nos",
+      "titleHighlight": "coordonnées",
+      "subtitle": "Choisissez le moyen de contact qui vous convient le mieux pour votre <span class=\"text-brand-primary font-semibold\">réservation</span> ou votre <span class=\"text-brand-primary font-semibold\">événement</span>",
+      "phone": {
+        "title": "Téléphone",
+        "availability": "Disponibilité",
+        "days": "Mardi - Samedi",
+        "hours": "10h-13h & 16h-19h",
+        "cta": "Réponse immédiate"
+      },
+      "email": {
+        "title": "Email",
+        "guarantee": "Garantie",
+        "responseTime": "Réponse sous 24h",
+        "days": "Du lundi au samedi",
+        "cta": "Pour demandes détaillées"
+      },
+      "address": {
+        "title": "Adresse",
+        "access": "Accès",
+        "tram": "Tram C - Arrêt Quinconces",
+        "parking": "Parking à proximité",
+        "cta": "Voir sur Google Maps"
+      }
+    },
+    "form": {
+      "badge": "Formulaire de contact",
+      "title": "Envoyez-nous un",
+      "titleHighlight": "message",
+      "description": "Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.",
+      "required": "Les champs marqués d'un astérisque (*) sont obligatoires.",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer",
+      "subjects": {
+        "reservation": "Réservation",
+        "catering": "Traiteur",
+        "privatisation": "Privatisation",
+        "other": "Autre"
+      },
+      "trust": {
+        "secure": "Données sécurisées",
+        "fast": "Réponse rapide",
+        "noSpam": "Sans spam"
+      }
+    },
+    "map": {
+      "openInMaps": "Ouvrir dans Google Maps"
+    },
+    "hours": {
+      "title": "Horaires d'ouverture",
+      "mondayTuesday": "Lundi & Mardi",
+      "wednesdaySaturday": "Mercredi - Samedi",
+      "lunch": "Déjeuner",
+      "dinner": "Dîner",
+      "lunchTime": "12h - 14h",
+      "dinnerTime": "19h - 21h",
+      "closedSunday": "Fermé dimanche"
+    },
+    "faq": {
+      "badge": "Questions fréquentes",
+      "title": "Vous avez des",
+      "titleHighlight": "questions",
+      "subtitle": "Nous avons rassemblé les réponses aux questions les plus courantes sur nos <span class=\"text-brand-primary font-semibold\">services</span>",
+      "items": [
+        {
+          "question": "Comment réserver une table au restaurant ?",
+          "answer": "Vous pouvez réserver par téléphone, email ou via le formulaire ci-dessous. Nous vous confirmerons votre <span class=\"text-brand-primary font-semibold\">réservation</span> sous 24h."
+        },
+        {
+          "question": "Quel est le délai pour un devis traiteur ?",
+          "answer": "Nous vous envoyons un <span class=\"text-brand-primary font-semibold\">devis gratuit</span> sous 48h après réception de votre demande. Pour les événements urgents, contactez-nous directement par téléphone."
+        },
+        {
+          "question": "Peut-on privatiser le restaurant ?",
+          "answer": "Oui ! Nous proposons la privatisation totale ou partielle de notre espace pour vos événements de 20 à 70 personnes."
+        }
+      ]
+    }
+  },
+  "privatisation": {
+    "hero": {
+      "title": "Groupe &",
+      "titleHighlight": "Privatisation",
+      "description": "Pour toute demande de réservation pour un <span class=\"text-brand-primary font-semibold\">groupe de 12 personnes et plus</span> ou pour la <span class=\"text-brand-primary font-semibold\">privatisation</span> du lieu*,<br /><br /><span class=\"text-sm\">*capacité d'accueil de 70 places assises</span>",
+      "badge": "Sur-mesure & éco-responsable",
+      "cta": "Contactez-nous"
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "Restaurant Bistronomique Bordeaux | Les Récoltants",
+      "description": "Restaurant bistronomique à Bordeaux. Cuisine du terroir avec des produits bio de notre ferme. Réservez votre table au cœur de Bordeaux."
+    },
+    "restaurant": {
+      "title": "Le Restaurant - Carte de Saison | Les Récoltants",
+      "description": "Découvrez notre carte bistronomique élaborée avec les produits frais de notre ferme bio. Une cuisine authentique au cœur de Bordeaux."
+    },
+    "farm": {
+      "title": "La Ferme - Produits Bio de Saison | Les Récoltants",
+      "description": "Découvrez La Ferme des Récoltants, notre exploitation bio qui fournit le restaurant en produits frais et de saison."
+    },
+    "contact": {
+      "title": "Contact & Réservation | Les Récoltants",
+      "description": "Contactez-nous pour réserver une table ou organiser un événement. Restaurant bistronomique au cœur de Bordeaux."
+    },
+    "privatisation": {
+      "title": "Groupe & Privatisation | Les Récoltants",
+      "description": "Privatisez notre restaurant pour vos événements. Menus sur-mesure et service éco-responsable à Bordeaux."
+    }
+  }
+}

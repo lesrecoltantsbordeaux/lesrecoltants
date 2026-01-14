@@ -3,8 +3,7 @@ import { Geist, Courier_Prime } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { defaultMetadata } from "@/lib/seo/config";
-import { getRestaurantStructuredData, getOrganizationStructuredData } from "@/lib/seo/structured-data";
-import CookieBanner from "@/components/ui/CookieBanner";
+import ZenchefWidget from "@/components/ui/ZenchefWidget";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,43 +37,26 @@ const vtgStencil = localFont({
   fallback: ["Arial", "sans-serif"],
 });
 
-// Métadonnées SEO optimisées pour Bordeaux
 export const metadata: Metadata = defaultMetadata;
 
-// Viewport séparé (recommandation Next.js)
 export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+type Props = {
   children: React.ReactNode;
-}>) {
-  // Données structurées pour SEO local
-  const restaurantData = getRestaurantStructuredData();
-  const organizationData = getOrganizationStructuredData();
+  params?: Promise<{ locale?: string }>;
+};
+
+export default async function RootLayout({ children, params }: Props) {
+  const resolvedParams = params ? await params : {};
+  const locale = resolvedParams.locale || 'fr';
 
   return (
-    <html lang="fr" className="scroll-smooth" data-scroll-behavior="smooth">
+    <html lang={locale} className="scroll-smooth" data-scroll-behavior="smooth">
       <head>
-        {/* Données structurées Schema.org */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(restaurantData),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationData),
-          }}
-        />
-
-        {/* Preconnect pour optimiser le chargement */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
@@ -85,7 +67,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           {children}
         </div>
-        <CookieBanner />
+        <ZenchefWidget />
       </body>
     </html>
   );

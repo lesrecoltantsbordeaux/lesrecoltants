@@ -1,0 +1,422 @@
+{
+  "navigation": {
+    "home": "Home",
+    "restaurant": "Restaurant",
+    "farm": "The Farm",
+    "privatisation": "Groups & Private Events",
+    "contact": "Contact"
+  },
+  "common": {
+    "reserve": "Book",
+    "reserveTable": "Book a table",
+    "callNow": "Call now",
+    "sendMessage": "Send message",
+    "learnMore": "Learn more",
+    "discover": "Discover",
+    "backToHome": "Back to home",
+    "changeLanguage": "Change language",
+    "menu": "Menu",
+    "googleReview": "Google Review",
+    "reviews": "reviews"
+  },
+  "footer": {
+    "tagline": "From farm to fork",
+    "description": "Farm-to-table restaurant & organic farmers market in Bordeaux.",
+    "navigation": "Navigation",
+    "hours": "Hours",
+    "contact": "Contact",
+    "mondayTuesday": "Monday & Tuesday",
+    "wednesdaySaturday": "Wednesday - Saturday",
+    "closedSunday": "Closed Sunday",
+    "lunchHours": "12pm - 2pm",
+    "dinnerHours": "7pm - 9pm",
+    "allRightsReserved": "All rights reserved",
+    "madeWithPassion": "Made with passion by",
+    "legalNotice": "Legal notice",
+    "privacy": "Privacy"
+  },
+  "cookies": {
+    "message": "This site uses cookies to provide you with the best experience possible.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "home": {
+    "pageLabel": "PAGE 01 — HOME",
+    "heroSubtitle": "Farm-to-table restaurant",
+    "heroTitle1": "From field",
+    "heroTitle2": "to your",
+    "heroTitle3": "plate",
+    "heroDescription": "A farm-to-table restaurant in Bordeaux, where we cook with products from neighboring organic farms. The best of local terroir, strong connections, a cuisine that respects what matters.",
+    "stats": {
+      "organic": {
+        "value": "100%",
+        "label": "Peasant farming",
+        "sublabel": "Organic & regenerative"
+      },
+      "local": {
+        "value": "<200km",
+        "label": "Short supply chain",
+        "sublabel": "Direct from producers"
+      },
+      "pesticide": {
+        "value": "0",
+        "label": "Pesticides",
+        "sublabel": "Living soil"
+      },
+      "seasonal": {
+        "value": "100%",
+        "label": "Seasonal",
+        "sublabel": "Guaranteed freshness"
+      }
+    },
+    "values": {
+      "sectionLabel": "Our commitments",
+      "title": "A cuisine with",
+      "titleHighlight": "meaning",
+      "description1": "The message is simple: <strong>defend the terroir at all costs</strong>, respect <strong>living things</strong> and source exclusively from <strong>local producers</strong> and <strong>artisans</strong>.",
+      "description2": "Because it's possible to offer delicious cuisine that's also <strong>ultra-local</strong>.",
+      "card1": {
+        "title": "Zero compromise",
+        "description": "Raw products grown using <strong>organic farming</strong>, peasant methods, respecting <strong>living soil</strong>, without pesticides…"
+      },
+      "card2": {
+        "title": "Direct from Producers",
+        "description": "<strong>Neighboring farms</strong> that deliver <strong>directly</strong> to us, from 20km to 150km at most. That's real taste: <strong>fresh</strong>, simple, immediate."
+      },
+      "card3": {
+        "title": "Les Récoltants Farm",
+        "description": "We grow our vegetables using <strong>organic farming</strong>, in our own <strong>field 20km</strong> from here. Nothing truer, nothing simpler."
+      },
+      "card4": {
+        "title": "Fairness",
+        "description": "A <strong>fair price</strong> for the producer, an honest price for you, and dignified conditions for the whole team. <strong>Fairness</strong> at every level."
+      }
+    },
+    "charter": {
+      "title": "THE RÉCOLTANTS CHARTER",
+      "items": [
+        "A product with real <strong>TASTE</strong>",
+        "Our organic garden directly on your plate",
+        "Organic, peasant and sustainable farming on <strong>LIVING</strong> soil!",
+        "<strong>SEASONALITY</strong> 100% respected",
+        "Spotlight on terroir and local resources",
+        "Sustainable and <strong>RESPECTFUL</strong> farming practices",
+        "Preserving artisanal know-how",
+        "<strong>TRANSPARENCY</strong> at every level",
+        "A fair price for consumer and producer"
+      ]
+    },
+    "ecosystem": {
+      "sectionLabel": "Our world",
+      "title1": "A virtuous ecosystem",
+      "title2": "centered on",
+      "titleHighlight": "local",
+      "description1": "At Les Récoltants, everything is based on a <strong>virtuous circle</strong> that connects the farm, the kitchen and the land.",
+      "description2": "Our vegetables grow in <strong>living soils</strong>, just a stone's throw away. We cook them in their entirety, without waste. And what's left goes back to nourish the soil through our <strong>compost</strong>.",
+      "description3": "From field to plate, then from plate to earth: this is our way of caring for taste, <strong>producers</strong> and the territory."
+    },
+    "testimonials": {
+      "sectionLabel": "They trust us",
+      "title": "What our",
+      "titleHighlight": "customers",
+      "title2": "think of us"
+    },
+    "giftCard": {
+      "sectionLabel": "Give an experience",
+      "title": "Gift card",
+      "description": "Let your loved ones discover the restaurant",
+      "cta": "Give a gift card"
+    }
+  },
+  "farm": {
+    "hero": {
+      "title": "The",
+      "titleHighlight": "farm",
+      "description": "<span class=\"text-brand-primary font-semibold\">20km from Bordeaux</span>, the <span class=\"text-brand-primary font-semibold\">organic garden</span> of Les Récoltants. Where <span class=\"text-brand-primary font-semibold\">vegetables</span> patiently wait for the perfect moment for their <span class=\"text-brand-primary font-semibold\">harvest</span>.<br /><br />From the <span class=\"text-brand-primary font-semibold\">gardener's</span> hand to the <span class=\"text-brand-primary font-semibold\">chef's</span>, we create the <span class=\"text-brand-primary font-semibold\">menu</span> that highlights the <span class=\"text-brand-primary font-semibold\">flavors</span> of <span class=\"text-brand-primary font-semibold\">nature</span>.",
+      "badge": "100% Organic & Local",
+      "cta": "Discover our products",
+      "stats": {
+        "bio": { "value": "100%", "label": "Organic & Local", "sublabel": "AB Certified" },
+        "local": { "value": "<50km", "label": "Short circuit", "sublabel": "Partner farm" },
+        "pesticide": { "value": "0", "label": "Pesticides", "sublabel": "Living soil" },
+        "seasonal": { "value": "100%", "label": "Seasonal", "sublabel": "Guaranteed freshness" }
+      }
+    },
+    "story": {
+      "location": "Tabanac — Entre-deux-Mers — 20 km from Bordeaux",
+      "mainTitle": "Our farm is located on a rich clay terroir that gives all its strength to our vegetables.",
+      "section1": {
+        "number": "01",
+        "title": "At the farm",
+        "intro": "Our practices are inspired by <strong class=\"text-brand-primary\">agroecology</strong> and respect for living things.",
+        "description": "François, a peasant market gardener, works with nature, not against it: <span class=\"text-brand-primary font-semibold\">living soils</span>, crop rotations, <span class=\"text-brand-primary font-semibold\">peasant seeds</span>, preservation of <span class=\"text-brand-primary font-semibold\">biodiversity</span>... Every gesture aims to nourish the earth as much as our plates, for <span class=\"text-brand-primary font-semibold\">sustainable agriculture</span> deeply respectful of living things."
+      },
+      "section2": {
+        "number": "02",
+        "title": "The terroir",
+        "intro": "Here, the soil is <strong class=\"text-brand-primary\">clay-loam</strong>. It naturally retains water and preserves minerals.",
+        "description": "This terroir, generous by nature, better resists droughts and fully supports our approach: cultivating in a <span class=\"text-brand-primary font-semibold\">100% natural</span> way, respecting the <span class=\"text-brand-primary font-semibold\">soils</span> and working with what they have most precious."
+      },
+      "section3": {
+        "number": "03",
+        "title": "The vegetables",
+        "intro": "<strong class=\"text-brand-primary\">About sixty varieties</strong> are grown throughout the year, favoring <span class=\"text-brand-primary font-semibold\">heirloom varieties</span>.",
+        "description": "This <span class=\"text-brand-primary font-semibold\">natural diversity</span> allows us to preserve <span class=\"text-brand-primary font-semibold\">authentic and rich flavors</span>, far from standardized norms."
+      }
+    },
+    "mosaic": {
+      "sectionLabel": "Our world",
+      "title": "A living",
+      "titleHighlight": "ecosystem",
+      "labels": {
+        "farm": "Our farm",
+        "exceptional": "An exceptional terroir",
+        "vegetables": "Organic vegetables",
+        "garden": "The garden",
+        "harvest": "The harvest",
+        "terroir": "Terroir",
+        "team": "The team"
+      }
+    },
+    "producers": {
+      "sectionLabel": "Our producers",
+      "title": "Valuing the work of producers",
+      "titleHighlight": "&",
+      "title2": "respecting life",
+      "relationTitle": "A direct & human relationship",
+      "relationDescription": "We maintain a direct and close relationship with all the producers and artisans we work with: we know them personally, exchange with them every week, understand their farming practices and put their know-how at the heart of our cuisine.",
+      "tags": {
+        "shortCircuit": "Short circuits",
+        "directRelation": "Direct relationship",
+        "craftsmanship": "Artisanal know-how"
+      },
+      "pillar1": {
+        "number": "01",
+        "title": "Fair compensation",
+        "description": "It is essential for us that the producers we work with are fairly and sustainably compensated. We ensure that the price of products is balanced and consistent for everyone: producers, customers and restaurant.",
+        "points": [
+          "Direct negotiation without intermediary",
+          "Prices set in consultation with the producer",
+          "Long-term commitment for economic stability"
+        ],
+        "label": "Fair price"
+      },
+      "pillar2": {
+        "number": "02",
+        "title": "Peasant & local farming",
+        "description": "We defend a demanding vision of agriculture, peasant, local and human, respectful of the environment, of life and traditional know-how."
+      },
+      "pillar3": {
+        "number": "03",
+        "title": "Heritage breeds & varieties",
+        "description": "Limousin cows, Gascon pigs, Pyrenean goats... We work for the promotion of local animal breeds and heirloom varieties threatened by standardization."
+      }
+    },
+    "charter": {
+      "title": "THE RÉCOLTANTS CHARTER",
+      "items": [
+        "A product with real <strong>TASTE</strong>",
+        "Our organic garden directly on your plate",
+        "Organic, peasant and sustainable farming on <strong>LIVING</strong> soil!",
+        "<strong>SEASONALITY</strong> 100% respected",
+        "Spotlight on terroir and local resources",
+        "Sustainable and <strong>RESPECTFUL</strong> farming practices",
+        "Preserving artisanal know-how",
+        "<strong>TRANSPARENCY</strong> at every level",
+        "A fair price for consumer and producer"
+      ]
+    }
+  },
+  "restaurant": {
+    "hero": {
+      "title": "A cuisine that celebrates the",
+      "titleHighlight": "terroir",
+      "description": "Our menu evolves with the rhythm of <span class=\"text-brand-primary font-semibold\">harvests</span> and <span class=\"text-brand-primary font-semibold\">seasons</span>. Each dish highlights a <span class=\"text-brand-primary font-semibold\">producer</span>, a craft, a story.",
+      "badge": "Chef's cuisine – raw terroir products"
+    },
+    "philosophy": {
+      "sectionLabel": "Our philosophy",
+      "title": "On the",
+      "titleHighlight": "plate",
+      "paragraph1": "At Les Récoltants, we chose <em class=\"not-italic font-semibold text-brand-primary-dark\">not to freeze our menu</em>. The heart of our project is to adapt to harvests, season after season, and to products available at the moment from our partner producers and in our fields. Every day, our entirely homemade cuisine reinvents itself based on arrivals, to offer a fresh, living, and sincere menu.",
+      "commitmentLabel": "Our commitment",
+      "paragraph2": "Our cuisine defends <span class=\"font-bold underline decoration-2 underline-offset-4 decoration-white/60\">local peasant farming</span>. Simple and sincere but not simplistic, it is guided by the quality of the products we work with. Here, everything is <span class=\"font-bold underline decoration-2 underline-offset-4 decoration-white/60\">local</span>, with no intermediaries between your plate and the field.",
+      "quote": "From field to plate, no detours"
+    },
+    "gallery": {
+      "sectionLabel": "Snapshots",
+      "title": "The art of the",
+      "titleHighlight": "table",
+      "labels": {
+        "creative": "Creative cuisine",
+        "local": "Local products",
+        "knowHow": "Craftsmanship",
+        "behindScenes": "Behind the scenes",
+        "atmosphere": "Atmosphere"
+      },
+      "quote": "Each dish tells the story of a producer, a terroir, a season"
+    },
+    "giftCard": {
+      "sectionLabel": "Give an experience",
+      "title": "Gift card",
+      "description": "Let your loved ones discover the restaurant",
+      "cta": "Give a gift card"
+    },
+    "info": {
+      "sectionLabel": "Practical information",
+      "title": "Everything you need to",
+      "titleHighlight": "know",
+      "hours": {
+        "title": "Hours",
+        "mondayTuesday": "Monday & Tuesday",
+        "mondayTuesdayHours": "12pm - 2pm",
+        "wednesdaySaturday": "Wednesday - Saturday",
+        "wednesdaySaturdayHours": "12pm - 2pm • 7pm - 9pm",
+        "sunday": "Sunday",
+        "closed": "Closed"
+      },
+      "goodToKnow": {
+        "title": "Good to know",
+        "reservation": "Reservation strongly recommended",
+        "vegetarian": "<span class=\"text-brand-primary font-semibold\">Vegetarian</span> menu available daily",
+        "allergies": "Adaptations available for <span class=\"text-brand-primary font-semibold\">allergies and intolerances</span>",
+        "children": "Children's portions available",
+        "payment": "Credit cards, Amex, la GEMME and cash accepted",
+        "accessibility": "Wheelchair accessible"
+      },
+      "menu": {
+        "title": "Menu",
+        "weekdays": "Monday to Friday",
+        "starterMain": "Starter - Main or Main - Dessert",
+        "fullMenu": "Starter - Main - Dessert",
+        "mainOnly": "Main course only",
+        "alaCarte": "À la carte, evenings and weekends"
+      }
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Let's talk about your",
+      "titleHighlight": "project",
+      "description": "A <span class=\"text-brand-primary font-semibold\">reservation</span>, a question, an <span class=\"text-brand-primary font-semibold\">event</span> to organize? We're here to help and will respond within 24 hours.",
+      "badge": "Response within 24h · Free quote",
+      "ctaPrimary": "Call now",
+      "ctaSecondary": "Send a message"
+    },
+    "coordinates": {
+      "title": "Our",
+      "titleHighlight": "contact details",
+      "subtitle": "Choose the contact method that suits you best for your <span class=\"text-brand-primary font-semibold\">reservation</span> or <span class=\"text-brand-primary font-semibold\">event</span>",
+      "phone": {
+        "title": "Phone",
+        "availability": "Availability",
+        "days": "Tuesday - Saturday",
+        "hours": "10am-1pm & 4pm-7pm",
+        "cta": "Immediate response"
+      },
+      "email": {
+        "title": "Email",
+        "guarantee": "Guarantee",
+        "responseTime": "Response within 24h",
+        "days": "Monday to Saturday",
+        "cta": "For detailed inquiries"
+      },
+      "address": {
+        "title": "Address",
+        "access": "Access",
+        "tram": "Tram C - Quinconces stop",
+        "parking": "Parking nearby",
+        "cta": "View on Google Maps"
+      }
+    },
+    "form": {
+      "badge": "Contact form",
+      "title": "Send us a",
+      "titleHighlight": "message",
+      "description": "Fill out the form below and we'll get back to you as soon as possible.",
+      "required": "Fields marked with an asterisk (*) are required.",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send",
+      "subjects": {
+        "reservation": "Reservation",
+        "catering": "Catering",
+        "privatisation": "Private event",
+        "other": "Other"
+      },
+      "trust": {
+        "secure": "Secure data",
+        "fast": "Quick response",
+        "noSpam": "No spam"
+      }
+    },
+    "map": {
+      "openInMaps": "Open in Google Maps"
+    },
+    "hours": {
+      "title": "Opening hours",
+      "mondayTuesday": "Monday & Tuesday",
+      "wednesdaySaturday": "Wednesday - Saturday",
+      "lunch": "Lunch",
+      "dinner": "Dinner",
+      "lunchTime": "12pm - 2pm",
+      "dinnerTime": "7pm - 9pm",
+      "closedSunday": "Closed Sunday"
+    },
+    "faq": {
+      "badge": "Frequently asked questions",
+      "title": "Do you have",
+      "titleHighlight": "questions",
+      "subtitle": "We've gathered answers to the most common questions about our <span class=\"text-brand-primary font-semibold\">services</span>",
+      "items": [
+        {
+          "question": "How can I book a table at the restaurant?",
+          "answer": "You can book by phone, email or via the form below. We will confirm your <span class=\"text-brand-primary font-semibold\">reservation</span> within 24 hours."
+        },
+        {
+          "question": "What is the turnaround time for a catering quote?",
+          "answer": "We send you a <span class=\"text-brand-primary font-semibold\">free quote</span> within 48 hours of receiving your request. For urgent events, contact us directly by phone."
+        },
+        {
+          "question": "Can we privatize the restaurant?",
+          "answer": "Yes! We offer full or partial <span class=\"text-brand-primary font-semibold\">privatization</span> of our space for events of 20 to 80 people."
+        }
+      ]
+    }
+  },
+  "privatisation": {
+    "hero": {
+      "title": "Groups &",
+      "titleHighlight": "Private Events",
+      "description": "For any reservation request for a <span class=\"text-brand-primary font-semibold\">group of 12 or more</span> or for <span class=\"text-brand-primary font-semibold\">private hire</span> of the venue*,<br /><br /><span class=\"text-sm\">*capacity of 70 seated guests</span>",
+      "badge": "Bespoke & eco-friendly",
+      "cta": "Contact us"
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "Farm-to-Table Restaurant Bordeaux | Les Récoltants",
+      "description": "Farm-to-table restaurant in Bordeaux. Local cuisine with organic products from our own farm. Book your table in the heart of Bordeaux."
+    },
+    "restaurant": {
+      "title": "The Restaurant - Seasonal Menu | Les Récoltants",
+      "description": "Discover our seasonal menu crafted with fresh products from our organic farm. Authentic cuisine in the heart of Bordeaux."
+    },
+    "farm": {
+      "title": "The Farm - Organic Seasonal Products | Les Récoltants",
+      "description": "Discover The Farm of Les Récoltants, our organic farm that supplies the restaurant with fresh, seasonal products."
+    },
+    "contact": {
+      "title": "Contact & Reservations | Les Récoltants",
+      "description": "Contact us to book a table or organize an event. Farm-to-table restaurant in the heart of Bordeaux."
+    },
+    "privatisation": {
+      "title": "Groups & Private Events | Les Récoltants",
+      "description": "Privatize our restaurant for your events. Custom menus and eco-responsible service in Bordeaux."
+    }
+  }
+}

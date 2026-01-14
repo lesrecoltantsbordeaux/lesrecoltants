@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
-import { ArrowRightIcon } from "@/components/ui/Icons";
 
 interface HeroCarouselProps {
   images: string[];
@@ -83,7 +82,8 @@ export default function HeroCarousel({
               alt={`${title} - Image ${index + 1}`}
               fill
               priority={index === 0}
-              quality={100}
+              loading={index === 0 ? "eager" : "lazy"}
+              quality={80}
               sizes="100vw"
               className={lastImageZoomOut && index === images.length - 1 ? "object-contain" : "object-cover"}
               style={{ objectPosition: "center" }}

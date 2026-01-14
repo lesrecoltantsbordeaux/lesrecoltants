@@ -52,7 +52,7 @@ export const siteConfig = {
       "Th 19:00-21:00",
       "Fr 12:00-14:00",
       "Fr 19:00-21:00",
-      "Sa 10:00-14:00",
+      "Sa 12:00-14:00",
       "Sa 19:00-21:00",
     ],
 
@@ -165,10 +165,10 @@ export const defaultMetadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/og-image.jpg", // À créer
+        url: "/images/hero/hero-background.jpg",
         width: 1200,
         height: 630,
-        alt: siteConfig.name,
+        alt: `${siteConfig.name} - Restaurant bistronomique à Bordeaux`,
       },
     ],
   },
@@ -178,13 +178,13 @@ export const defaultMetadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} - Restaurant Bio à Bordeaux`,
     description: siteConfig.description,
-    images: ["/og-image.jpg"],
+    images: ["/images/hero/hero-background.jpg"],
   },
 
   // Icons
   icons: {
     icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    shortcut: "/favicon.ico",
   },
 
   // Robots

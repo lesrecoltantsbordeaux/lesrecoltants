@@ -1,42 +1,46 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
 import Image from "next/image";
+import { useTranslations, useLocale } from "next-intl";
+import { Link, usePathname, useRouter } from "@/lib/i18n/routing";
 import { siteConfig } from "@/lib/seo/config";
-
-const navigation = [
-  { label: "Accueil", href: "/" },
-  { label: "Le Restaurant", href: "/restaurant" },
-  { label: "La Ferme", href: "/la-ferme" },
-  { label: "Traiteur & Privatisation", href: "/traiteur-privatisation" },
-  { label: "Contact", href: "/contact" },
-];
+import type { Locale } from "@/lib/i18n/config";
 
 export default function Header() {
+  const t = useTranslations("navigation");
+  const tCommon = useTranslations("common");
+  const locale = useLocale() as Locale;
+  const pathname = usePathname();
+  const router = useRouter();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isOverDarkSection, setIsOverDarkSection] = useState(false);
-  const [currentLang, setCurrentLang] = useState<"FR" | "EN">("FR");
-  const pathname = usePathname();
 
-  const toggleLanguage = () => {
-    setCurrentLang(currentLang === "FR" ? "EN" : "FR");
-    // TODO: Implémenter la logique de changement de langue (i18n)
+  const navigation = [
+    { label: t("home"), href: "/" as const },
+    { label: t("restaurant"), href: "/restaurant" as const },
+    { label: t("farm"), href: "/la-ferme" as const },
+    { label: t("privatisation"), href: "/traiteur-privatisation" as const },
+    { label: t("contact"), href: "/contact" as const },
+  ];
+
+  const switchLocale = (newLocale: Locale) => {
+    router.replace(pathname, { locale: newLocale });
   };
+
   // Toutes les pages avec un hero carousel ont besoin d'un header transparent
   const isTransparentPage = ["/", "/la-ferme", "/restaurant", "/traiteur-privatisation", "/contact"].includes(pathname);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const headerHeight = 96; // h-24 = 6rem = 96px
-      // Le hero fait généralement 100vh, on considère qu'on est sorti du hero quand on a scrollé au-delà
+    let ticking = false;
+    const headerHeight = 96;
+    const darkSections = ["charte-section", "bon-cadeau-section"];
+
+    const updateHeader = () => {
       const heroHeight = window.innerHeight - headerHeight;
       setIsScrolled(window.scrollY > heroHeight);
-
-      // Détecter si le header est au-dessus d'une section sombre (fond vert)
-      const darkSections = ["charte-section", "bon-cadeau-section"];
 
       const isOverDark = darkSections.some((id) => {
         const section = document.getElementById(id);
@@ -48,10 +52,18 @@ export default function Header() {
       });
 
       setIsOverDarkSection(isOverDark);
+      ticking = false;
     };
-    // Check initial scroll position
-    handleScroll();
-    window.addEventListener("scroll", handleScroll);
+
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    };
+
+    updateHeader();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -72,7 +84,7 @@ export default function Header() {
             <Link
               href="/"
               className="relative z-10 group flex items-center"
-              aria-label="Retour à l'accueil"
+              aria-label={tCommon("backToHome")}
             >
               <Image
                 src="/images/logos/logo-les-recoltants.png"
@@ -141,23 +153,37 @@ export default function Header() {
                     : "bg-brand-primary text-white hover:bg-brand-primary-dark"
                 }`}
               >
-                Réserver
+                {tCommon("reserve")}
               </Link>
 
               {/* Language Switcher */}
-              <button
-                onClick={toggleLanguage}
+              <div
                 className={`flex items-center gap-1.5 text-sm font-courier font-medium transition-all px-3 py-1.5 rounded-full border ${
                   isOverDarkSection || (isTransparentPage && !isScrolled)
-                    ? "border-white/50 text-white hover:bg-white/10"
-                    : "border-neutral-light text-neutral-dark hover:border-brand-primary hover:text-brand-primary"
+                    ? "border-white/50 text-white"
+                    : "border-neutral-light text-neutral-dark"
                 }`}
-                aria-label="Changer de langue"
               >
-                <span className={currentLang === "FR" ? "font-bold" : "opacity-60"}>FR</span>
+                <button
+                  onClick={() => switchLocale("fr")}
+                  className={`transition-all hover:opacity-100 ${
+                    locale === "fr" ? "font-bold" : "opacity-60 hover:text-brand-primary"
+                  }`}
+                  aria-label="Français"
+                >
+                  FR
+                </button>
                 <span className="opacity-40">|</span>
-                <span className={currentLang === "EN" ? "font-bold" : "opacity-60"}>EN</span>
-              </button>
+                <button
+                  onClick={() => switchLocale("en")}
+                  className={`transition-all hover:opacity-100 ${
+                    locale === "en" ? "font-bold" : "opacity-60 hover:text-brand-primary"
+                  }`}
+                  aria-label="English"
+                >
+                  EN
+                </button>
+              </div>
             </div>
 
             {/* Burger Menu Mobile */}
@@ -166,7 +192,7 @@ export default function Header() {
               className={`lg:hidden relative z-10 w-10 h-10 flex flex-col items-center justify-center gap-1.5 transition-colors ${
                 isOverDarkSection || (isTransparentPage && !isScrolled) ? "text-white" : "text-neutral-dark"
               }`}
-              aria-label="Menu"
+              aria-label={tCommon("menu")}
               aria-expanded={isMobileMenuOpen}
             >
               <span
@@ -235,19 +261,39 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(false)}
               className="bg-brand-primary text-white px-8 py-3 rounded-full font-courier font-medium hover:bg-brand-primary-dark transition-all hover:scale-105 shadow-lg"
             >
-              Réserver
+              {tCommon("reserve")}
             </Link>
 
             {/* Language Switcher Mobile */}
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center gap-2 text-lg font-courier font-medium text-white border border-white/50 px-4 py-2 rounded-full hover:bg-white/10 transition-all"
-              aria-label="Changer de langue"
+            <div
+              className="flex items-center gap-2 text-lg font-courier font-medium text-white border border-white/50 px-4 py-2 rounded-full"
             >
-              <span className={currentLang === "FR" ? "font-bold text-brand-primary" : "opacity-60"}>FR</span>
+              <button
+                onClick={() => {
+                  switchLocale("fr");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`transition-all ${
+                  locale === "fr" ? "font-bold text-brand-primary" : "opacity-60"
+                }`}
+                aria-label="Français"
+              >
+                FR
+              </button>
               <span className="opacity-40">|</span>
-              <span className={currentLang === "EN" ? "font-bold text-brand-primary" : "opacity-60"}>EN</span>
-            </button>
+              <button
+                onClick={() => {
+                  switchLocale("en");
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`transition-all ${
+                  locale === "en" ? "font-bold text-brand-primary" : "opacity-60"
+                }`}
+                aria-label="English"
+              >
+                EN
+              </button>
+            </div>
           </div>
         </nav>
       </div>

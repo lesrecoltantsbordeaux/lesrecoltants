@@ -78,7 +78,7 @@ export default function LocalBusinessSchema() {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Nos services",
-      itemListElement: siteConfig.business.services.map((service, index) => ({
+      itemListElement: siteConfig.business.services.map((service) => ({
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",

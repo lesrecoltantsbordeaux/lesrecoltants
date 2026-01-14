@@ -31,9 +31,19 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus("submitting");
 
-    // TODO: Implémenter l'envoi du formulaire
-    // Pour le moment, simulation
-    setTimeout(() => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erreur lors de l'envoi");
+      }
+
       setStatus("success");
       // Reset form
       setFormData({
@@ -46,7 +56,10 @@ export default function ContactForm() {
         eventDate: "",
         guestCount: "",
       });
-    }, 1500);
+    } catch (error) {
+      console.error("Erreur:", error);
+      setStatus("error");
+    }
   };
 
   const handleChange = (
@@ -58,7 +71,7 @@ export default function ContactForm() {
     });
   };
 
-  const showEventFields = formData.subject === "traiteur" || formData.subject === "privatisation";
+  const showEventFields = formData.subject === "groupe";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
@@ -128,15 +141,14 @@ export default function ContactForm() {
           required
           className="w-full px-4 py-3 rounded-lg border border-neutral-light/30 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/20 outline-none transition-all bg-white font-courier"
         >
-          <option value="reservation">Réservation restaurant</option>
-          <option value="traiteur">Service traiteur</option>
-          <option value="privatisation">Privatisation</option>
-          <option value="marche">Marché & bocaux</option>
+          <option value="reservation">Réserver une table</option>
+          <option value="groupe">Groupe & Privatisation</option>
+          <option value="ferme">La Ferme & Nos produits</option>
           <option value="autre">Autre demande</option>
         </select>
       </div>
 
-      {/* Champs conditionnels pour traiteur/privatisation */}
+      {/* Champs conditionnels pour groupe/privatisation */}
       {showEventFields && (
         <div className="grid md:grid-cols-2 gap-6 bg-brand-primary/5 rounded-xl p-6 border border-brand-primary/20">
           <div>

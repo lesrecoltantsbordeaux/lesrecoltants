@@ -1,8 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 export default function CookieBanner() {
+  const t = useTranslations("cookies");
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -55,7 +57,7 @@ export default function CookieBanner() {
 
             {/* Texte */}
             <p className="flex-1 font-courier text-white/90 text-sm leading-relaxed">
-              Ce site utilise des cookies pour vous offrir la meilleure expérience possible.
+              {t("message")}
             </p>
 
             {/* Boutons */}
@@ -64,13 +66,13 @@ export default function CookieBanner() {
                 onClick={refuseCookies}
                 className="px-5 py-2 text-white/70 font-courier text-sm hover:text-white transition-colors"
               >
-                Refuser
+                {t("decline")}
               </button>
               <button
                 onClick={acceptCookies}
                 className="px-6 py-2 bg-brand-primary text-white font-courier font-semibold text-sm hover:bg-brand-primary-dark transition-all"
               >
-                Accepter
+                {t("accept")}
               </button>
             </div>
           </div>

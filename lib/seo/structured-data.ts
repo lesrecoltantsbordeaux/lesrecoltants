@@ -15,7 +15,7 @@ export function getRestaurantStructuredData() {
     '@type': 'Restaurant',
     '@id': `${siteConfig.url}#restaurant`,
     name: siteConfig.business.name,
-    image: `${siteConfig.url}/og-image.jpg`,
+    image: `${siteConfig.url}/images/hero/hero-background.jpg`,
     description: siteConfig.description,
 
     // Adresse
@@ -122,7 +122,7 @@ export function getOrganizationStructuredData() {
     '@id': `${siteConfig.url}#organization`,
     name: siteConfig.business.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/logo.png`,
+    logo: `${siteConfig.url}/images/logos/logo-les-recoltants.png`,
     description: siteConfig.description,
     address: {
       '@type': 'PostalAddress',
