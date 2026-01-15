@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 
 export const siteConfig = {
   name: "Les Récoltants",
-  description: "Restaurant bistronomique & marché fermier bio à Bordeaux. Espace de vie nourricier, convivial et durable. Cuisine spontanée qui change tous les jours, 100% bio et local. De la fourche à la fourchette.",
+  description: "Restaurant en direct du champ à l'assiette à Bordeaux. Espace de vie nourricier, convivial et durable. Cuisine spontanée qui change tous les jours, 100% bio et local.",
   url: "https://lesrecoltants.fr",
 
   // SEO Local Bordeaux
@@ -15,7 +15,7 @@ export const siteConfig = {
     name: "Les Récoltants",
     type: "Restaurant",
     cuisine: "Bistronomique",
-    tagline: "De la fourche à la fourchette",
+    tagline: "Restaurant en direct du champ à l'assiette à Bordeaux",
 
     // Adresse
     address: {

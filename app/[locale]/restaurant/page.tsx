@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import HeroCarousel from "@/components/ui/HeroCarousel";
 import ScrollReveal, { RevealGroup } from "@/components/ui/ScrollReveal";
 import {
@@ -12,6 +11,8 @@ import {
   ChefHatIcon,
   ArrowRightIcon,
 } from "@/components/ui/Icons";
+import GalleryCarousel from "@/components/ui/GalleryCarousel";
+import CardsCarousel from "@/components/ui/CardsCarousel";
 
 export default function Restaurant() {
   const t = useTranslations("restaurant");
@@ -150,168 +151,55 @@ export default function Restaurant() {
       </section>
 
       {/* ==================== GALERIE PHOTO ==================== */}
-      <section className="py-24 lg:py-32 bg-white relative overflow-hidden">
-        {/* Texture de fond organique */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }} />
-
-        {/* Lignes décoratives verticales */}
-        <div className="absolute left-[10%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-brand-primary/10 to-transparent hidden xl:block" />
-        <div className="absolute right-[10%] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-brand-primary/10 to-transparent hidden xl:block" />
-
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          {/* En-tête créatif */}
-          <div className="max-w-4xl mx-auto mb-16 lg:mb-20">
-            <ScrollReveal animation="fade-up">
-              <div className="flex items-center justify-center gap-4 mb-8">
-                <div className="h-px w-16 bg-gradient-to-r from-transparent to-brand-primary" />
-                <span className="text-brand-primary text-xs font-courier font-semibold uppercase tracking-[0.3em]">
-                  {t("gallery.sectionLabel")}
-                </span>
-                <div className="h-px w-16 bg-gradient-to-l from-transparent to-brand-primary" />
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal animation="fade-up" delay={100}>
-              <h2 className="text-4xl lg:text-6xl xl:text-7xl font-stencil font-bold text-neutral-dark text-center leading-[0.95]">
-                {t("gallery.title")}{" "}
-                <span className="relative inline-block">
-                  <span className="bg-gradient-to-r from-brand-primary to-brand-primary-light bg-clip-text text-transparent">
-                    {t("gallery.titleHighlight")}
-                  </span>
-                  <svg className="absolute -bottom-2 left-0 w-full h-3 text-brand-primary/20" viewBox="0 0 100 12" preserveAspectRatio="none">
-                    <path d="M0 6 Q 25 0, 50 6 T 100 6" stroke="currentColor" strokeWidth="2" fill="none" />
-                  </svg>
-                </span>
-              </h2>
-            </ScrollReveal>
-          </div>
-
-          {/* Grille mosaïque asymétrique */}
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 lg:grid-cols-12 gap-3 lg:gap-4">
-
-              {/* Image 1 - Grande, verticale */}
-              <ScrollReveal animation="fade-up" delay={0} className="col-span-1 lg:col-span-5 lg:row-span-2">
-                <div className="group relative h-[280px] lg:h-[580px] overflow-hidden cursor-pointer">
-                  <div className="absolute inset-0 bg-neutral-dark/5 group-hover:bg-transparent transition-all duration-700" />
-                  <Image
-                    src="/images/restaurant/carrousel/carrousel-1.jpg"
-                    alt="Plat signature des Récoltants"
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 40vw"
-                    className="object-cover transition-all duration-700 group-hover:scale-105"
-                  />
-                  {/* Overlay élégant au hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <span className="inline-block px-3 py-1 bg-white/90 text-neutral-dark text-xs font-courier uppercase tracking-wider">
-                      {t("gallery.labels.creative")}
-                    </span>
-                  </div>
-                  {/* Cadre décoratif */}
-                  <div className="absolute inset-4 border border-white/0 group-hover:border-white/30 transition-all duration-500 pointer-events-none" />
-                </div>
-              </ScrollReveal>
-
-              {/* Image 2 - Moyenne, horizontale */}
-              <ScrollReveal animation="fade-up" delay={100} className="col-span-1 lg:col-span-4">
-                <div className="group relative h-[180px] lg:h-[280px] overflow-hidden cursor-pointer">
-                  <div className="absolute inset-0 bg-brand-primary/5 group-hover:bg-transparent transition-all duration-700" />
-                  <Image
-                    src="/images/restaurant/carrousel/carrousel-2.jpg"
-                    alt="Détail de présentation"
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-all duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <span className="inline-block px-3 py-1 bg-white/90 text-neutral-dark text-xs font-courier uppercase tracking-wider">
-                      {t("gallery.labels.local")}
-                    </span>
-                  </div>
-                  <div className="absolute inset-3 lg:inset-4 border border-white/0 group-hover:border-white/30 transition-all duration-500 pointer-events-none" />
-                </div>
-              </ScrollReveal>
-
-              {/* Image 3 - Petite, carrée */}
-              <ScrollReveal animation="fade-up" delay={200} className="col-span-1 lg:col-span-3">
-                <div className="group relative h-[180px] lg:h-[280px] overflow-hidden cursor-pointer">
-                  <div className="absolute inset-0 bg-neutral-dark/5 group-hover:bg-transparent transition-all duration-700" />
-                  <Image
-                    src="/images/restaurant/carrousel/carrousel-3.jpg"
-                    alt="Ambiance du restaurant"
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-all duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <span className="inline-block px-3 py-1 bg-white/90 text-neutral-dark text-xs font-courier uppercase tracking-wider">
-                      {t("gallery.labels.knowHow")}
-                    </span>
-                  </div>
-                  <div className="absolute inset-3 lg:inset-4 border border-white/0 group-hover:border-white/30 transition-all duration-500 pointer-events-none" />
-                </div>
-              </ScrollReveal>
-
-              {/* Image 4 - Moyenne */}
-              <ScrollReveal animation="fade-up" delay={150} className="col-span-1 lg:col-span-3">
-                <div className="group relative h-[200px] lg:h-[288px] overflow-hidden cursor-pointer">
-                  <div className="absolute inset-0 bg-brand-primary/5 group-hover:bg-transparent transition-all duration-700" />
-                  <Image
-                    src="/images/restaurant/carrousel/carrousel-4.jpg"
-                    alt="Le chef en cuisine"
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-all duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <span className="inline-block px-3 py-1 bg-white/90 text-neutral-dark text-xs font-courier uppercase tracking-wider">
-                      {t("gallery.labels.behindScenes")}
-                    </span>
-                  </div>
-                  <div className="absolute inset-3 lg:inset-4 border border-white/0 group-hover:border-white/30 transition-all duration-500 pointer-events-none" />
-                </div>
-              </ScrollReveal>
-
-              {/* Image 5 - Large */}
-              <ScrollReveal animation="fade-up" delay={250} className="col-span-1 lg:col-span-4">
-                <div className="group relative h-[200px] lg:h-[288px] overflow-hidden cursor-pointer">
-                  <div className="absolute inset-0 bg-neutral-dark/5 group-hover:bg-transparent transition-all duration-700" />
-                  <Image
-                    src="/images/restaurant/carrousel/carrousel-5.jpg"
-                    alt="Table dressée"
-                    fill
-                    sizes="(max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-all duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <span className="inline-block px-3 py-1 bg-white/90 text-neutral-dark text-xs font-courier uppercase tracking-wider">
-                      {t("gallery.labels.atmosphere")}
-                    </span>
-                  </div>
-                  <div className="absolute inset-3 lg:inset-4 border border-white/0 group-hover:border-white/30 transition-all duration-500 pointer-events-none" />
-                </div>
-              </ScrollReveal>
-
-            </div>
-          </div>
-
-          {/* Citation finale */}
-          <ScrollReveal animation="fade-up" delay={400}>
-            <div className="mt-16 lg:mt-20 text-center">
-              <p className="font-courier text-neutral-medium text-sm lg:text-base italic max-w-xl mx-auto">
-                &quot;{t("gallery.quote")}&quot;
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
+      <GalleryCarousel
+        sectionLabel={t("gallery.sectionLabel")}
+        title={t("gallery.title")}
+        titleHighlight={t("gallery.titleHighlight")}
+        quote={t("gallery.quote")}
+        images={[
+          {
+            src: "/images/restaurant/carrousel/carrousel-1.jpg",
+            alt: "Plat signature des Récoltants",
+            label: t("gallery.labels.creative"),
+            colSpan: "col-span-1 lg:col-span-5",
+            rowSpan: "lg:row-span-2",
+            height: "h-[280px] lg:h-[580px]",
+            sizes: "(max-width: 1024px) 50vw, 40vw",
+          },
+          {
+            src: "/images/restaurant/carrousel/carrousel-2.jpg",
+            alt: "Détail de présentation",
+            label: t("gallery.labels.local"),
+            colSpan: "col-span-1 lg:col-span-4",
+            height: "h-[180px] lg:h-[280px]",
+            sizes: "(max-width: 1024px) 50vw, 33vw",
+          },
+          {
+            src: "/images/restaurant/carrousel/carrousel-3.jpg",
+            alt: "Ambiance du restaurant",
+            label: t("gallery.labels.knowHow"),
+            colSpan: "col-span-1 lg:col-span-3",
+            height: "h-[180px] lg:h-[280px]",
+            sizes: "(max-width: 1024px) 50vw, 25vw",
+          },
+          {
+            src: "/images/restaurant/carrousel/carrousel-4.jpg",
+            alt: "Le chef en cuisine",
+            label: t("gallery.labels.behindScenes"),
+            colSpan: "col-span-1 lg:col-span-3",
+            height: "h-[200px] lg:h-[288px]",
+            sizes: "(max-width: 1024px) 50vw, 25vw",
+          },
+          {
+            src: "/images/restaurant/carrousel/carrousel-5.jpg",
+            alt: "Table dressée",
+            label: t("gallery.labels.atmosphere"),
+            colSpan: "col-span-1 lg:col-span-4",
+            height: "h-[200px] lg:h-[288px]",
+            sizes: "(max-width: 1024px) 50vw, 33vw",
+          },
+        ]}
+      />
 
 
       {/* ==================== BON CADEAU ==================== */}
@@ -377,96 +265,103 @@ export default function Restaurant() {
               </ScrollReveal>
             </div>
 
-            <RevealGroup className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            <CardsCarousel
+              desktopGridCols="md:grid-cols-2 lg:grid-cols-3"
+              gap="gap-8 lg:gap-10"
+              cardWidth="w-[85%]"
+            >
               {/* Horaires */}
-              <div className="reveal-item bg-ceruse-light rounded-2xl p-8 lg:p-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
-                    <CalendarIcon size={24} className="text-brand-primary" />
+              <div className="bg-ceruse-light rounded-2xl p-6 lg:p-10 h-full">
+                <div className="flex items-center gap-3 mb-5 lg:mb-6">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
+                    <CalendarIcon size={20} className="text-brand-primary lg:hidden" />
+                    <CalendarIcon size={24} className="text-brand-primary hidden lg:block" />
                   </div>
-                  <h3 className="text-2xl font-stencil font-bold text-neutral-dark">{t("info.hours.title")}</h3>
+                  <h3 className="text-xl lg:text-2xl font-stencil font-bold text-neutral-dark">{t("info.hours.title")}</h3>
                 </div>
-                <div className="space-y-5">
+                <div className="space-y-4 lg:space-y-5">
                   <div>
-                    <p className="font-bold text-neutral-dark text-lg mb-2">{t("info.hours.mondayTuesday")}</p>
-                    <p className="text-neutral-medium">{t("info.hours.mondayTuesdayHours")}</p>
+                    <p className="font-bold text-neutral-dark text-base lg:text-lg mb-1 lg:mb-2">{t("info.hours.mondayTuesday")}</p>
+                    <p className="text-neutral-medium text-sm lg:text-base">{t("info.hours.mondayTuesdayHours")}</p>
                   </div>
                   <div className="h-px bg-neutral-light/30" />
                   <div>
-                    <p className="font-bold text-neutral-dark text-lg mb-2">{t("info.hours.wednesdaySaturday")}</p>
-                    <p className="text-neutral-medium">{t("info.hours.wednesdaySaturdayHours")}</p>
+                    <p className="font-bold text-neutral-dark text-base lg:text-lg mb-1 lg:mb-2">{t("info.hours.wednesdaySaturday")}</p>
+                    <p className="text-neutral-medium text-sm lg:text-base" dangerouslySetInnerHTML={{ __html: t.raw("info.hours.wednesdaySaturdayHours") }} />
                   </div>
                   <div className="h-px bg-neutral-light/30" />
                   <div>
-                    <p className="font-bold text-neutral-dark text-lg mb-2">{t("info.hours.sunday")}</p>
-                    <p className="text-neutral-medium">{t("info.hours.closed")}</p>
+                    <p className="font-bold text-neutral-dark text-base lg:text-lg mb-1 lg:mb-2">{t("info.hours.sunday")}</p>
+                    <p className="text-neutral-medium text-sm lg:text-base">{t("info.hours.closed")}</p>
                   </div>
                 </div>
               </div>
 
               {/* Bon à savoir */}
-              <div className="reveal-item bg-ceruse-light rounded-2xl p-8 lg:p-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
-                    <CheckCircleIcon size={24} className="text-brand-primary" />
+              <div className="bg-ceruse-light rounded-2xl p-6 lg:p-10 h-full">
+                <div className="flex items-center gap-3 mb-5 lg:mb-6">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
+                    <CheckCircleIcon size={20} className="text-brand-primary lg:hidden" />
+                    <CheckCircleIcon size={24} className="text-brand-primary hidden lg:block" />
                   </div>
-                  <h3 className="text-2xl font-stencil font-bold text-neutral-dark">{t("info.goodToKnow.title")}</h3>
+                  <h3 className="text-xl lg:text-2xl font-stencil font-bold text-neutral-dark">{t("info.goodToKnow.title")}</h3>
+                </div>
+                <div className="space-y-3 lg:space-y-4">
+                  <div className="flex items-start gap-2 lg:gap-3">
+                    <CheckCircleIcon size={18} className="text-brand-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-neutral-medium text-sm lg:text-base">{t("info.goodToKnow.reservation")}</p>
                   </div>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon size={20} className="text-brand-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-neutral-medium">{t("info.goodToKnow.reservation")}</p>
+                  <div className="flex items-start gap-2 lg:gap-3">
+                    <CheckCircleIcon size={18} className="text-brand-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-neutral-medium text-sm lg:text-base">{t("info.goodToKnow.vegetarian")}</p>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon size={20} className="text-brand-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-neutral-medium" dangerouslySetInnerHTML={{ __html: t.raw("info.goodToKnow.vegetarian") }} />
+                  <div className="flex items-start gap-2 lg:gap-3">
+                    <CheckCircleIcon size={18} className="text-brand-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-neutral-medium text-sm lg:text-base">{t("info.goodToKnow.allergies")}</p>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon size={20} className="text-brand-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-neutral-medium" dangerouslySetInnerHTML={{ __html: t.raw("info.goodToKnow.allergies") }} />
+                  <div className="flex items-start gap-2 lg:gap-3">
+                    <CheckCircleIcon size={18} className="text-brand-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-neutral-medium text-sm lg:text-base">{t("info.goodToKnow.children")}</p>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon size={20} className="text-brand-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-neutral-medium">{t("info.goodToKnow.children")}</p>
+                  <div className="flex items-start gap-2 lg:gap-3">
+                    <CheckCircleIcon size={18} className="text-brand-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-neutral-medium text-sm lg:text-base">{t("info.goodToKnow.payment")}</p>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon size={20} className="text-brand-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-neutral-medium">{t("info.goodToKnow.payment")}</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon size={20} className="text-brand-primary flex-shrink-0 mt-0.5" />
-                    <p className="text-neutral-medium">{t("info.goodToKnow.accessibility")}</p>
+                  <div className="flex items-start gap-2 lg:gap-3">
+                    <CheckCircleIcon size={18} className="text-brand-primary flex-shrink-0 mt-0.5" />
+                    <p className="text-neutral-medium text-sm lg:text-base">{t("info.goodToKnow.accessibility")}</p>
                   </div>
                 </div>
               </div>
 
               {/* Menu Déjeuner */}
-              <div className="reveal-item bg-ceruse-light rounded-2xl p-8 lg:p-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
-                    <RestaurantIcon size={24} className="text-brand-primary" />
+              <div className="bg-ceruse-light rounded-2xl p-6 lg:p-10 h-full">
+                <div className="flex items-center gap-3 mb-5 lg:mb-6">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
+                    <RestaurantIcon size={20} className="text-brand-primary lg:hidden" />
+                    <RestaurantIcon size={24} className="text-brand-primary hidden lg:block" />
                   </div>
-                  <h3 className="text-2xl font-stencil font-bold text-neutral-dark">{t("info.menu.title")}</h3>
+                  <h3 className="text-xl lg:text-2xl font-stencil font-bold text-neutral-dark">{t("info.menu.title")}</h3>
                 </div>
-                <p className="text-neutral-medium font-semibold mb-4">{t("info.menu.weekdays")}</p>
-                <div className="space-y-3">
+                <p className="text-neutral-medium font-semibold mb-3 lg:mb-4 text-sm lg:text-base">{t("info.menu.weekdays")}</p>
+                <div className="space-y-2 lg:space-y-3">
                   <div className="flex justify-between items-center">
-                    <p className="text-neutral-medium">{t("info.menu.starterMain")}</p>
+                    <p className="text-neutral-medium text-sm lg:text-base">{t("info.menu.starterMain")}</p>
                     <p className="font-bold text-brand-primary">20€</p>
                   </div>
                   <div className="flex justify-between items-center">
-                    <p className="text-neutral-medium">{t("info.menu.fullMenu")}</p>
+                    <p className="text-neutral-medium text-sm lg:text-base">{t("info.menu.fullMenu")}</p>
                     <p className="font-bold text-brand-primary">25€</p>
                   </div>
                   <div className="flex justify-between items-center">
-                    <p className="text-neutral-medium">{t("info.menu.mainOnly")}</p>
+                    <p className="text-neutral-medium text-sm lg:text-base">{t("info.menu.mainOnly")}</p>
                     <p className="font-bold text-brand-primary">16€</p>
                   </div>
-                  <div className="h-px bg-neutral-light/30 my-4" />
-                  <p className="text-neutral-medium">{t("info.menu.alaCarte")}</p>
+                  <div className="h-px bg-neutral-light/30 my-3 lg:my-4" />
+                  <p className="text-neutral-medium font-semibold text-sm lg:text-base">{t("info.menu.alaCarte")}</p>
                 </div>
               </div>
-            </RevealGroup>
+            </CardsCarousel>
 
           </div>
         </div>

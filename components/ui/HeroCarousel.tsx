@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ReactNode } from "react";
@@ -44,6 +44,9 @@ export default function HeroCarousel({
   lastImageZoomOut = false,
 }: HeroCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+  const minSwipeDistance = 50;
 
   // Auto-play carousel
   useEffect(() => {
@@ -58,22 +61,54 @@ export default function HeroCarousel({
     setCurrentIndex(index);
   };
 
-  const goToPrevious = () => {
+  const goToPrevious = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  }, [images.length]);
+
+  const goToNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  }, [images.length]);
+
+  // Gestion du swipe tactile
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchEndX.current = null;
+    touchStartX.current = e.targetTouches[0].clientX;
   };
 
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % images.length);
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+
+    const distance = touchStartX.current - touchEndX.current;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      goToNext();
+    } else if (isRightSwipe) {
+      goToPrevious();
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
   };
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Full-screen background carousel */}
-      <div className="absolute inset-0 w-full h-full">
+      <div
+        className="absolute inset-0 w-full h-full"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
         {images.map((src, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-700 ${
+            className={`absolute inset-0 transition-opacity duration-700 flex items-center justify-center ${
               index === currentIndex ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -86,7 +121,7 @@ export default function HeroCarousel({
               quality={80}
               sizes="100vw"
               className={lastImageZoomOut && index === images.length - 1 ? "object-contain" : "object-cover"}
-              style={{ objectPosition: "center" }}
+              style={{ objectPosition: "center center" }}
             />
           </div>
         ))}
@@ -94,10 +129,10 @@ export default function HeroCarousel({
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40" />
 
-        {/* Navigation arrows */}
+        {/* Navigation arrows - hidden on mobile */}
         <button
           onClick={goToPrevious}
-          className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all z-20 shadow-lg"
+          className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full items-center justify-center transition-all z-20 shadow-lg"
           aria-label="Image précédente"
         >
           <svg
@@ -116,7 +151,7 @@ export default function HeroCarousel({
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all z-20 shadow-lg"
+          className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full items-center justify-center transition-all z-20 shadow-lg"
           aria-label="Image suivante"
         >
           <svg
@@ -152,7 +187,7 @@ export default function HeroCarousel({
 
         {/* Stats overlay at bottom */}
         {stats && (
-          <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-black/80 via-black/50 to-transparent pt-16 pb-8">
+          <div className="absolute bottom-0 left-0 right-0 z-20 bg-gradient-to-t from-black/80 via-black/50 to-transparent pt-16 pb-20 lg:pb-8">
             <div className="container mx-auto px-4 lg:px-8">
               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 max-w-5xl mx-auto">
                 {stats.map((stat, index) => (
@@ -176,7 +211,7 @@ export default function HeroCarousel({
 
       {/* Content on top */}
       <div className="container mx-auto px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl pt-32 lg:pt-40 pb-24">
+        <div className={`max-w-3xl pt-16 lg:pt-40 ${stats ? "pb-52 lg:pb-48" : "pb-24"}`}>
           {/* Badge */}
           {badge && (
             <div className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border-2 border-white text-neutral-dark px-5 py-2.5 text-sm font-courier font-semibold mb-8 animate-fade-in uppercase tracking-widest shadow-lg">
@@ -189,11 +224,10 @@ export default function HeroCarousel({
           <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-stencil font-bold text-white leading-[1.05] tracking-tight mb-8 animate-fade-in-up stagger-1 drop-shadow-2xl">
             {highlightWord ? (
               <>
-                {title.split(highlightWord)[0]}
+                {title}{" "}
                 <span className="text-brand-primary drop-shadow-2xl">
                   {highlightWord}
                 </span>
-                {title.split(highlightWord)[1]}
               </>
             ) : (
               title

@@ -265,7 +265,7 @@ export async function POST(request: Request) {
                 Les Récoltants
               </p>
               <p style="color: #999; margin: 0; font-size: 12px;">
-                Restaurant bistronomique • De la fourche à la fourchette
+                Restaurant en direct du champ à l'assiette à Bordeaux
               </p>
               <p style="margin: 15px 0 0 0;">
                 <a href="https://lesrecoltants.fr" style="color: #4A7C59; text-decoration: none; font-size: 13px;">lesrecoltants.fr</a>

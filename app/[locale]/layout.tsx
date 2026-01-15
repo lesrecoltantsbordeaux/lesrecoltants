@@ -6,7 +6,6 @@ import { locales, type Locale } from '@/lib/i18n/config';
 import { defaultMetadata } from '@/lib/seo/config';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import FloatingCTA from '@/components/ui/FloatingCTA';
 import CookieBanner from '@/components/ui/CookieBanner';
 
 type Props = {
@@ -54,7 +53,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         {children}
       </main>
       <Footer />
-      <FloatingCTA />
       <CookieBanner />
     </NextIntlClientProvider>
   );

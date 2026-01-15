@@ -13,6 +13,7 @@ import {
   StarIcon,
   UsersIcon,
 } from "@/components/ui/Icons";
+import CardsCarousel from "@/components/ui/CardsCarousel";
 
 export default function Home() {
   const t = useTranslations("home");
@@ -157,48 +158,60 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal animation="fade-up" delay={150}>
               <p
-                className="text-xl lg:text-2xl font-courier text-neutral-dark leading-relaxed max-w-4xl mx-auto mb-6"
+                className="text-lg lg:text-xl font-courier text-neutral-dark leading-relaxed max-w-4xl mx-auto mb-4"
                 dangerouslySetInnerHTML={{ __html: t.raw("values.description1") }}
               />
             </ScrollReveal>
             <ScrollReveal animation="fade-up" delay={200}>
               <p
-                className="text-base lg:text-lg font-courier text-neutral-dark leading-relaxed max-w-5xl mx-auto"
+                className="text-lg lg:text-xl font-courier text-neutral-dark leading-relaxed max-w-5xl mx-auto"
                 dangerouslySetInnerHTML={{ __html: t.raw("values.description2") }}
               />
             </ScrollReveal>
           </div>
 
           {/* Grid des valeurs */}
-          <RevealGroup className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <CardsCarousel
+            desktopGridCols="md:grid-cols-2 lg:grid-cols-4"
+            gap="gap-6 lg:gap-8"
+            cardWidth="w-[80%]"
+          >
             {valueCards.map((card, index) => {
               const IconComponent = card.icon;
               return (
-                <div key={index} className="reveal-item group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-2 border border-neutral-light/20">
-                  <div className="w-14 h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <IconComponent size={28} className="text-brand-primary" />
+                <div key={index} className="group bg-white rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-xl transition-all duration-500 md:hover:-translate-y-2 border border-neutral-light/20 h-full">
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-4 lg:mb-6 group-hover:scale-110 transition-transform">
+                    <IconComponent size={24} className="text-brand-primary lg:hidden" />
+                    <IconComponent size={28} className="text-brand-primary hidden lg:block" />
                   </div>
-                  <h3 className="text-xl font-stencil font-bold text-brand-primary mb-3">
+                  <h3 className="text-lg lg:text-xl font-stencil font-bold text-brand-primary mb-2 lg:mb-3">
                     {t(`values.${card.key}.title`)}
                   </h3>
                   <p
-                    className="font-courier text-neutral-dark leading-relaxed"
+                    className="font-courier text-neutral-dark leading-relaxed text-sm lg:text-base"
                     dangerouslySetInnerHTML={{ __html: t.raw(`values.${card.key}.description`) }}
                   />
                 </div>
               );
             })}
-          </RevealGroup>
+          </CardsCarousel>
         </div>
       </section>
 
       {/* ==================== LA CHARTE DES RÉCOLTANTS ==================== */}
-      <section id="charte-section" className="py-24 lg:py-32 texture-terracotta-cmyk-image relative overflow-hidden">
+      <section id="charte-section" className="py-16 lg:py-32 texture-terracotta-cmyk-image relative overflow-hidden">
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
-            {/* Titre principal */}
+            {/* Titre principal - Version mobile */}
+            <ScrollReveal animation="fade-up" duration={800}>
+              <h2 className="md:hidden text-2xl sm:text-3xl font-stencil font-bold text-white text-center uppercase tracking-wider mb-8">
+                {t("charter.title")}
+              </h2>
+            </ScrollReveal>
+
+            {/* Titre principal - Version desktop avec arc */}
             <ScrollReveal animation="scale" duration={800}>
-              <div className="mb-4 lg:mb-6 flex justify-center">
+              <div className="hidden md:flex mb-6 justify-center">
                 <svg viewBox="0 0 1100 200" className="w-full max-w-5xl h-auto">
                   <defs>
                     <path id="arc-path" d="M 30 150 Q 550 30 1070 150" fill="none" />
@@ -213,17 +226,17 @@ export default function Home() {
             </ScrollReveal>
 
             {/* Liste des principes */}
-            <ul className="space-y-1 lg:space-y-2">
+            <ul className="space-y-2 lg:space-y-2">
               {(t.raw("charter.items") as string[]).map((item: string, index: number) => (
                 <li key={index}>
                   {index > 0 && (
-                    <div className="flex items-center justify-center">
-                      <span className="text-white font-courier text-lg lg:text-xl">—</span>
+                    <div className="flex items-center justify-center py-1">
+                      <span className="text-white/60 font-courier text-base lg:text-xl">—</span>
                     </div>
                   )}
-                  <div className="flex items-center justify-center">
+                  <div className="flex items-center justify-center px-2">
                     <p
-                      className="font-courier text-white text-lg lg:text-xl leading-relaxed text-center"
+                      className="font-courier text-white text-sm sm:text-base lg:text-xl leading-relaxed text-center"
                       dangerouslySetInnerHTML={{ __html: item }}
                     />
                   </div>
@@ -278,32 +291,40 @@ export default function Home() {
             </ScrollReveal>
           </div>
 
-          {/* Grille d'images 3x2 */}
-          <RevealGroup className="grid grid-cols-3 gap-2 lg:gap-3 mt-12 lg:mt-16 w-full px-2 lg:px-4">
-            {[
-              "/images/ecosysteme/ecosysteme-1.jpg",
-              "/images/ecosysteme/ecosysteme-2.jpg",
-              "/images/ecosysteme/ecosysteme-3.jpg",
-              "/images/ecosysteme/ecosysteme-4.jpg",
-              "/images/ecosysteme/ecosysteme-5.jpg",
-              "/images/ecosysteme/ecosysteme-6.jpg",
-            ].map((src, index) => (
-              <div
-                key={index}
-                className="reveal-item aspect-square lg:aspect-[4/3] overflow-hidden relative group"
-              >
-                <Image
-                  src={src}
-                  alt={`Ecosystem ${index + 1}`}
-                  fill
-                  sizes="(max-width: 768px) 33vw, (max-width: 1024px) 33vw, 400px"
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  quality={80}
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </RevealGroup>
+          {/* Grille d'images - Carrousel mobile / Grille desktop */}
+          <div className="mt-10 lg:mt-16 w-full">
+            {/* Version mobile - Carrousel horizontal */}
+            <CardsCarousel
+              desktopGridCols="grid-cols-3"
+              gap="gap-2 lg:gap-3"
+              cardWidth="w-[70%]"
+              showDotsOnMobile={true}
+            >
+              {[
+                "/images/ecosysteme/ecosysteme-1.jpg",
+                "/images/ecosysteme/ecosysteme-2.jpg",
+                "/images/ecosysteme/ecosysteme-3.jpg",
+                "/images/ecosysteme/ecosysteme-4.jpg",
+                "/images/ecosysteme/ecosysteme-5.jpg",
+                "/images/ecosysteme/ecosysteme-6.jpg",
+              ].map((src, index) => (
+                <div
+                  key={index}
+                  className="aspect-square overflow-hidden relative group rounded-lg"
+                >
+                  <Image
+                    src={src}
+                    alt={`Ecosystem ${index + 1}`}
+                    fill
+                    sizes="(max-width: 768px) 70vw, (max-width: 1024px) 33vw, 400px"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    quality={80}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </CardsCarousel>
+          </div>
         </div>
       </section>
 
@@ -354,70 +375,74 @@ export default function Home() {
           </div>
 
           {/* Grid témoignages - Les témoignages restent en français car ce sont de vrais avis */}
-          <RevealGroup className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <CardsCarousel
+            desktopGridCols="md:grid-cols-2 lg:grid-cols-3"
+            gap="gap-6 lg:gap-8"
+            cardWidth="w-[85%]"
+          >
             {/* Témoignage 1 */}
-            <div className="reveal-item bg-ceruse-light rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="flex gap-1 mb-4">
+            <div className="bg-ceruse-light rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
+              <div className="flex gap-1 mb-3 lg:mb-4">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <StarIcon key={star} size={18} className="text-brand-primary" />
+                  <StarIcon key={star} size={16} className="text-brand-primary" />
                 ))}
               </div>
-              <p className="font-courier text-neutral-dark leading-relaxed mb-6 italic">
-                &quot;J&apos;ai adoré cette table rue Sainte Colombe ! On a l&apos;impression vu de l&apos;extérieur que la salle est relativement petite, eh bien sachez que le restaurant est tout en longueur avec une autre salle très spacieuse au fond. J&apos;ai choisi un dahl de graines de sarrasin + œuf parfait, accompagné d&apos;un <span className="text-brand-primary font-semibold not-italic">jus maison</span> gingembre, pomme et carotte. Je me suis régalée !&quot;
+              <p className="font-courier text-neutral-dark leading-relaxed mb-5 lg:mb-6 italic text-sm lg:text-base">
+                &quot;J&apos;ai adoré cette table rue Sainte Colombe ! On a l&apos;impression vu de l&apos;extérieur que la salle est relativement petite, eh bien sachez que le restaurant est tout en longueur avec une autre salle très spacieuse au fond. J&apos;ai choisi un dahl de graines de sarrasin + œuf parfait, accompagné d&apos;un jus maison gingembre, pomme et carotte. Je me suis régalée !&quot;
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-brand-primary/20 rounded-full flex items-center justify-center">
-                  <span className="text-brand-primary font-stencil font-bold">LM</span>
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-brand-primary/20 rounded-full flex items-center justify-center">
+                  <span className="text-brand-primary font-stencil font-bold text-sm lg:text-base">LM</span>
                 </div>
                 <div>
-                  <p className="font-stencil font-bold text-neutral-dark">Laurence M.</p>
-                  <p className="text-sm font-courier text-neutral-dark">{tCommon("googleReview")}</p>
+                  <p className="font-stencil font-bold text-neutral-dark text-sm lg:text-base">Laurence M.</p>
+                  <p className="text-xs lg:text-sm font-courier text-neutral-dark">{tCommon("googleReview")}</p>
                 </div>
               </div>
             </div>
 
             {/* Témoignage 2 */}
-            <div className="reveal-item bg-ceruse-light rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="flex gap-1 mb-4">
+            <div className="bg-ceruse-light rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
+              <div className="flex gap-1 mb-3 lg:mb-4">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <StarIcon key={star} size={18} className="text-brand-primary" />
+                  <StarIcon key={star} size={16} className="text-brand-primary" />
                 ))}
               </div>
-              <p className="font-courier text-neutral-dark leading-relaxed mb-6 italic">
-                &quot;Nous avons adoré notre expérience chez Les Récoltants. La cuisine est vraiment excellente, avec des produits <span className="text-brand-primary font-semibold not-italic">ultra-frais</span> qui viennent directement de leur <span className="text-brand-primary font-semibold not-italic">ferme</span> ou de <span className="text-brand-primary font-semibold not-italic">producteurs locaux</span>.&quot;
+              <p className="font-courier text-neutral-dark leading-relaxed mb-5 lg:mb-6 italic text-sm lg:text-base">
+                &quot;Nous avons adoré notre expérience chez Les Récoltants. La cuisine est vraiment excellente, avec des produits ultra-frais qui viennent directement de leur ferme ou de producteurs locaux.&quot;
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-brand-primary/20 rounded-full flex items-center justify-center">
-                  <span className="text-brand-primary font-stencil font-bold">HR</span>
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-brand-primary/20 rounded-full flex items-center justify-center">
+                  <span className="text-brand-primary font-stencil font-bold text-sm lg:text-base">HR</span>
                 </div>
                 <div>
-                  <p className="font-stencil font-bold text-neutral-dark">Helma Ravenel</p>
-                  <p className="text-sm font-courier text-neutral-dark">{tCommon("googleReview")}</p>
+                  <p className="font-stencil font-bold text-neutral-dark text-sm lg:text-base">Helma Ravenel</p>
+                  <p className="text-xs lg:text-sm font-courier text-neutral-dark">{tCommon("googleReview")}</p>
                 </div>
               </div>
             </div>
 
             {/* Témoignage 3 */}
-            <div className="reveal-item bg-ceruse-light rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300">
-              <div className="flex gap-1 mb-4">
+            <div className="bg-ceruse-light rounded-2xl p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 h-full">
+              <div className="flex gap-1 mb-3 lg:mb-4">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <StarIcon key={star} size={18} className="text-brand-primary" />
+                  <StarIcon key={star} size={16} className="text-brand-primary" />
                 ))}
               </div>
-              <p className="font-courier text-neutral-dark leading-relaxed mb-6 italic">
-                &quot;Quel plaisir de pouvoir attribuer une note excellente à un restaurant qui le mérite vraiment ! Nous avons adoré cette <span className="text-brand-primary font-semibold not-italic">expérience en famille</span> : de l&apos;<span className="text-brand-primary font-semibold not-italic">accueil chaleureux</span> à la qualité des plats.&quot;
+              <p className="font-courier text-neutral-dark leading-relaxed mb-5 lg:mb-6 italic text-sm lg:text-base">
+                &quot;Quel plaisir de pouvoir attribuer une note excellente à un restaurant qui le mérite vraiment ! Nous avons adoré cette expérience en famille : de l&apos;accueil chaleureux à la qualité des plats.&quot;
               </p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-brand-primary/20 rounded-full flex items-center justify-center">
-                  <span className="text-brand-primary font-stencil font-bold">C</span>
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-brand-primary/20 rounded-full flex items-center justify-center">
+                  <span className="text-brand-primary font-stencil font-bold text-sm lg:text-base">C</span>
                 </div>
                 <div>
-                  <p className="font-stencil font-bold text-neutral-dark">Catherine</p>
-                  <p className="text-sm font-courier text-neutral-dark">{tCommon("googleReview")}</p>
+                  <p className="font-stencil font-bold text-neutral-dark text-sm lg:text-base">Catherine</p>
+                  <p className="text-xs lg:text-sm font-courier text-neutral-dark">{tCommon("googleReview")}</p>
                 </div>
               </div>
             </div>
-          </RevealGroup>
+          </CardsCarousel>
         </div>
       </section>
 

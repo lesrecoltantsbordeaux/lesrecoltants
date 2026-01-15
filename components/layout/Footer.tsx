@@ -28,42 +28,42 @@ export default function Footer() {
       <div className="absolute inset-0 bg-gradient-to-b from-neutral-dark/95 to-neutral-dark" />
 
       {/* Section principale */}
-      <div className="container mx-auto px-4 lg:px-8 py-16 lg:py-20 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10">
+      <div className="container mx-auto px-4 lg:px-8 py-10 lg:py-20 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
 
           {/* Colonne 1: À propos */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             {/* Logo Écosystème Bio */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/images/logos/logo-ecosysteme.png"
               alt="Logo Écosystème Bio"
-              className="h-20 w-auto brightness-0 invert"
+              className="h-16 sm:h-20 w-auto brightness-0 invert"
             />
 
             <p className="font-courier text-white/60 text-sm leading-relaxed max-w-xs">
-              <span className="text-brand-primary font-semibold">{t("tagline")}.</span> {t("description")}
+              <span className="text-white font-semibold">{t("tagline")}.</span> {t("description")}
             </p>
 
             {/* Logos Accréditations */}
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-4 sm:gap-6 lg:gap-8 flex-wrap">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/logos/ecoatable.png"
                 alt="Écotable - Restaurant engagé"
-                className="h-24 w-auto brightness-0 invert"
+                className="h-12 sm:h-16 lg:h-24 w-auto brightness-0 invert"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/logos/ocean-friendly.png"
                 alt="Ocean Friendly Restaurants"
-                className="h-24 w-auto brightness-0 invert object-contain"
+                className="h-12 sm:h-16 lg:h-24 w-auto brightness-0 invert object-contain"
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/images/logos/raisin.png"
                 alt="Raisin - Vin naturel"
-                className="h-24 w-auto"
+                className="h-12 sm:h-16 lg:h-24 w-auto"
               />
             </div>
           </div>
@@ -95,7 +95,8 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-white/80 font-medium">{t("wednesdaySaturday")}</p>
-                <p className="text-white/50 text-xs">{t("lunchHours")} • {t("dinnerHours")}</p>
+                <p className="text-white/50 text-xs">{t("lunchHours")}</p>
+                <p className="text-white/50 text-xs">{t("dinnerHours")}</p>
               </div>
               <div className="pt-2">
                 <p className="text-white/40 text-xs">{t("closedSunday")}</p>
@@ -156,16 +157,34 @@ export default function Footer() {
 
       {/* Barre du bas */}
       <div className="relative z-10">
-        <div className="container mx-auto px-4 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-courier">
+        <div className="container mx-auto px-4 lg:px-8 py-5 lg:py-6 pb-20 sm:pb-5 lg:pb-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4 text-xs sm:text-sm font-courier">
+
+            {/* Liens légaux - premier sur mobile pour l'accessibilité */}
+            <div className="flex items-center gap-3 sm:gap-4 order-first md:order-last">
+              <Link
+                href="/mentions-legales"
+                className="text-white/40 hover:text-brand-primary transition-colors"
+              >
+                {t("legalNotice")}
+              </Link>
+              <span className="text-white/20 hidden sm:inline">|</span>
+              <Link
+                href="/politique-confidentialite"
+                className="text-white/40 hover:text-brand-primary transition-colors"
+              >
+                {t("privacy")}
+              </Link>
+            </div>
 
             {/* Copyright */}
-            <div className="text-white/40">
-              © {currentYear} {siteConfig.name} • {t("allRightsReserved")}
+            <div className="text-white/40 text-center">
+              © {currentYear} {siteConfig.name}
+              <span className="hidden sm:inline"> • {t("allRightsReserved")}</span>
             </div>
 
             {/* Propul'SEO */}
-            <div className="text-white/40">
+            <div className="text-white/40 text-center">
               {t("madeWithPassion")}{" "}
               <a
                 href="https://propulseo-site.com"
@@ -175,22 +194,6 @@ export default function Footer() {
               >
                 Propul&apos;SEO
               </a>
-            </div>
-
-            {/* Liens légaux */}
-            <div className="flex items-center gap-4">
-              <Link
-                href="/mentions-legales"
-                className="text-white/40 hover:text-brand-primary transition-colors"
-              >
-                {t("legalNotice")}
-              </Link>
-              <Link
-                href="/politique-confidentialite"
-                className="text-white/40 hover:text-brand-primary transition-colors"
-              >
-                {t("privacy")}
-              </Link>
             </div>
           </div>
         </div>
